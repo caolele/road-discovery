@@ -1,4 +1,4 @@
-train_net: "/dvol/training/train.prototxt"
+train_net: "train.prototxt"
 
 iter_size: 1
 
@@ -15,5 +15,5 @@ display: 10
 max_iter: 300000
 
 snapshot: 10000
-snapshot_prefix: "/dvol/training/snapshots/dl2crf"
+snapshot_prefix: "snapshots/dl2crf"
 solver_mode: CPU
