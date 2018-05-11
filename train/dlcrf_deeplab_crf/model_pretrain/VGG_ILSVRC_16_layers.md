@@ -1,4 +1,4 @@
-##Information
+## Information
 
 name: 16-layer model from the arXiv paper: "Very Deep Convolutional Networks for Large-Scale Image Recognition"
 
