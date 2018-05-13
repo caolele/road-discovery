@@ -1,0 +1,1831 @@
+...
+I0511 18:25:26.072497 31642 layer_factory.hpp:77] Creating layer rawdata
+I0511 18:25:26.072613 31642 net.cpp:107] Creating Layer rawdata
+I0511 18:25:26.072674 31642 net.cpp:412] rawdata -> input_data
+I0511 18:25:26.072731 31642 net.cpp:412] rawdata -> input_label
+I0511 18:25:26.072808 31642 net.cpp:412] rawdata -> data_dim
+I0511 18:25:26.072953 31642 image_seg_data_layer.cpp:46] Opening file /dvol/road-discovery/data/lmdb/dlcrf_index.txt
+I0511 18:25:26.076957 31642 image_seg_data_layer.cpp:63] Shuffling data
+I0511 18:25:26.077342 31642 image_seg_data_layer.cpp:68] A total of 1382 images.
+I0511 18:25:26.085273 31642 image_seg_data_layer.cpp:137] output data size: 1,3,640,640
+I0511 18:25:26.085309 31642 image_seg_data_layer.cpp:141] output label size: 1,1,640,640
+I0511 18:25:26.085314 31642 image_seg_data_layer.cpp:145] output data_dim size: 1,1,1,2
+I0511 18:25:26.085955 31642 net.cpp:151] Setting up rawdata
+I0511 18:25:26.085976 31642 net.cpp:158] Top shape: 1 3 640 640 (1228800)
+I0511 18:25:26.085988 31642 net.cpp:158] Top shape: 1 1 640 640 (409600)
+I0511 18:25:26.085995 31642 net.cpp:158] Top shape: 1 1 1 2 (2)
+I0511 18:25:26.086016 31642 net.cpp:166] Memory required for data: 6553608
+I0511 18:25:26.086028 31642 layer_factory.hpp:77] Creating layer patch_transformer1
+I0511 18:25:26.086061 31642 net.cpp:107] Creating Layer patch_transformer1
+I0511 18:25:26.086087 31642 net.cpp:455] patch_transformer1 <- input_data
+I0511 18:25:26.086102 31642 net.cpp:455] patch_transformer1 <- input_label
+I0511 18:25:26.086110 31642 net.cpp:412] patch_transformer1 -> data
+I0511 18:25:26.086122 31642 net.cpp:412] patch_transformer1 -> label
+I0511 18:25:26.086143 31642 patch_transformer_layer.cpp:11] transformer input: 1, 3, 640, 640
+I0511 18:25:26.086153 31642 patch_transformer_layer.cpp:11] transformer input: 1, 1, 640, 640
+I0511 18:25:26.086165 31642 net.cpp:151] Setting up patch_transformer1
+I0511 18:25:26.086187 31642 net.cpp:158] Top shape: 1 3 449 449 (604803)
+I0511 18:25:26.086195 31642 net.cpp:158] Top shape: 1 1 449 449 (201601)
+I0511 18:25:26.086220 31642 net.cpp:166] Memory required for data: 9779224
+I0511 18:25:26.086227 31642 layer_factory.hpp:77] Creating layer data_patch_transformer1_0_split
+I0511 18:25:26.086236 31642 net.cpp:107] Creating Layer data_patch_transformer1_0_split
+I0511 18:25:26.086243 31642 net.cpp:455] data_patch_transformer1_0_split <- data
+I0511 18:25:26.086252 31642 net.cpp:412] data_patch_transformer1_0_split -> data_patch_transformer1_0_split_0
+I0511 18:25:26.086344 31642 net.cpp:412] data_patch_transformer1_0_split -> data_patch_transformer1_0_split_1
+I0511 18:25:26.086367 31642 net.cpp:412] data_patch_transformer1_0_split -> data_patch_transformer1_0_split_2
+I0511 18:25:26.086408 31642 net.cpp:151] Setting up data_patch_transformer1_0_split
+I0511 18:25:26.086431 31642 net.cpp:158] Top shape: 1 3 449 449 (604803)
+I0511 18:25:26.086441 31642 net.cpp:158] Top shape: 1 3 449 449 (604803)
+I0511 18:25:26.086457 31642 net.cpp:158] Top shape: 1 3 449 449 (604803)
+I0511 18:25:26.086483 31642 net.cpp:166] Memory required for data: 17036860
+I0511 18:25:26.086495 31642 layer_factory.hpp:77] Creating layer label_patch_transformer1_1_split
+I0511 18:25:26.086524 31642 net.cpp:107] Creating Layer label_patch_transformer1_1_split
+I0511 18:25:26.086535 31642 net.cpp:455] label_patch_transformer1_1_split <- label
+I0511 18:25:26.086555 31642 net.cpp:412] label_patch_transformer1_1_split -> label_patch_transformer1_1_split_0
+I0511 18:25:26.086581 31642 net.cpp:412] label_patch_transformer1_1_split -> label_patch_transformer1_1_split_1
+I0511 18:25:26.086596 31642 net.cpp:412] label_patch_transformer1_1_split -> label_patch_transformer1_1_split_2
+I0511 18:25:26.086627 31642 net.cpp:412] label_patch_transformer1_1_split -> label_patch_transformer1_1_split_3
+I0511 18:25:26.086647 31642 net.cpp:151] Setting up label_patch_transformer1_1_split
+I0511 18:25:26.086681 31642 net.cpp:158] Top shape: 1 1 449 449 (201601)
+I0511 18:25:26.086693 31642 net.cpp:158] Top shape: 1 1 449 449 (201601)
+I0511 18:25:26.086704 31642 net.cpp:158] Top shape: 1 1 449 449 (201601)
+I0511 18:25:26.086735 31642 net.cpp:158] Top shape: 1 1 449 449 (201601)
+I0511 18:25:26.086745 31642 net.cpp:166] Memory required for data: 20262476
+I0511 18:25:26.086779 31642 layer_factory.hpp:77] Creating layer conv1_1
+I0511 18:25:26.086832 31642 net.cpp:107] Creating Layer conv1_1
+I0511 18:25:26.086844 31642 net.cpp:455] conv1_1 <- data_patch_transformer1_0_split_0
+I0511 18:25:26.086859 31642 net.cpp:412] conv1_1 -> conv1_1
+I0511 18:25:26.087838 31642 net.cpp:151] Setting up conv1_1
+I0511 18:25:26.087882 31642 net.cpp:158] Top shape: 1 64 449 449 (12902464)
+I0511 18:25:26.087908 31642 net.cpp:166] Memory required for data: 71872332
+I0511 18:25:26.088582 31642 layer_factory.hpp:77] Creating layer relu1_1
+I0511 18:25:26.088634 31642 net.cpp:107] Creating Layer relu1_1
+I0511 18:25:26.088642 31642 net.cpp:455] relu1_1 <- conv1_1
+I0511 18:25:26.088651 31642 net.cpp:398] relu1_1 -> conv1_1 (in-place)
+I0511 18:25:26.088662 31642 net.cpp:151] Setting up relu1_1
+I0511 18:25:26.088686 31642 net.cpp:158] Top shape: 1 64 449 449 (12902464)
+I0511 18:25:26.088693 31642 net.cpp:166] Memory required for data: 123482188
+I0511 18:25:26.088717 31642 layer_factory.hpp:77] Creating layer conv1_2
+I0511 18:25:26.088728 31642 net.cpp:107] Creating Layer conv1_2
+I0511 18:25:26.088747 31642 net.cpp:455] conv1_2 <- conv1_1
+I0511 18:25:26.088754 31642 net.cpp:412] conv1_2 -> conv1_2
+I0511 18:25:26.089380 31642 net.cpp:151] Setting up conv1_2
+I0511 18:25:26.089419 31642 net.cpp:158] Top shape: 1 64 449 449 (12902464)
+I0511 18:25:26.089440 31642 net.cpp:166] Memory required for data: 175092044
+I0511 18:25:26.089453 31642 layer_factory.hpp:77] Creating layer relu1_2
+I0511 18:25:26.089475 31642 net.cpp:107] Creating Layer relu1_2
+I0511 18:25:26.089495 31642 net.cpp:455] relu1_2 <- conv1_2
+I0511 18:25:26.089519 31642 net.cpp:398] relu1_2 -> conv1_2 (in-place)
+I0511 18:25:26.089529 31642 net.cpp:151] Setting up relu1_2
+I0511 18:25:26.089536 31642 net.cpp:158] Top shape: 1 64 449 449 (12902464)
+I0511 18:25:26.089542 31642 net.cpp:166] Memory required for data: 226701900
+I0511 18:25:26.089563 31642 layer_factory.hpp:77] Creating layer pool1
+I0511 18:25:26.089591 31642 net.cpp:107] Creating Layer pool1
+I0511 18:25:26.089602 31642 net.cpp:455] pool1 <- conv1_2
+I0511 18:25:26.089615 31642 net.cpp:412] pool1 -> pool1
+I0511 18:25:26.089654 31642 net.cpp:151] Setting up pool1
+I0511 18:25:26.089713 31642 net.cpp:158] Top shape: 1 64 225 225 (3240000)
+I0511 18:25:26.089723 31642 net.cpp:166] Memory required for data: 239661900
+I0511 18:25:26.089738 31642 layer_factory.hpp:77] Creating layer conv2_1
+I0511 18:25:26.089752 31642 net.cpp:107] Creating Layer conv2_1
+I0511 18:25:26.089776 31642 net.cpp:455] conv2_1 <- pool1
+I0511 18:25:26.089814 31642 net.cpp:412] conv2_1 -> conv2_1
+I0511 18:25:26.090076 31642 net.cpp:151] Setting up conv2_1
+I0511 18:25:26.090113 31642 net.cpp:158] Top shape: 1 128 225 225 (6480000)
+I0511 18:25:26.090140 31642 net.cpp:166] Memory required for data: 265581900
+I0511 18:25:26.090159 31642 layer_factory.hpp:77] Creating layer relu2_1
+I0511 18:25:26.090194 31642 net.cpp:107] Creating Layer relu2_1
+I0511 18:25:26.090204 31642 net.cpp:455] relu2_1 <- conv2_1
+I0511 18:25:26.090210 31642 net.cpp:398] relu2_1 -> conv2_1 (in-place)
+I0511 18:25:26.090219 31642 net.cpp:151] Setting up relu2_1
+I0511 18:25:26.090226 31642 net.cpp:158] Top shape: 1 128 225 225 (6480000)
+I0511 18:25:26.090232 31642 net.cpp:166] Memory required for data: 291501900
+I0511 18:25:26.090252 31642 layer_factory.hpp:77] Creating layer conv2_2
+I0511 18:25:26.090262 31642 net.cpp:107] Creating Layer conv2_2
+I0511 18:25:26.090268 31642 net.cpp:455] conv2_2 <- conv2_1
+I0511 18:25:26.090276 31642 net.cpp:412] conv2_2 -> conv2_2
+I0511 18:25:26.090730 31642 net.cpp:151] Setting up conv2_2
+I0511 18:25:26.090773 31642 net.cpp:158] Top shape: 1 128 225 225 (6480000)
+I0511 18:25:26.090795 31642 net.cpp:166] Memory required for data: 317421900
+I0511 18:25:26.090816 31642 layer_factory.hpp:77] Creating layer relu2_2
+I0511 18:25:26.090838 31642 net.cpp:107] Creating Layer relu2_2
+I0511 18:25:26.090858 31642 net.cpp:455] relu2_2 <- conv2_2
+I0511 18:25:26.090888 31642 net.cpp:398] relu2_2 -> conv2_2 (in-place)
+I0511 18:25:26.090898 31642 net.cpp:151] Setting up relu2_2
+I0511 18:25:26.090904 31642 net.cpp:158] Top shape: 1 128 225 225 (6480000)
+I0511 18:25:26.090910 31642 net.cpp:166] Memory required for data: 343341900
+I0511 18:25:26.090916 31642 layer_factory.hpp:77] Creating layer pool2
+I0511 18:25:26.090924 31642 net.cpp:107] Creating Layer pool2
+I0511 18:25:26.090956 31642 net.cpp:455] pool2 <- conv2_2
+I0511 18:25:26.090975 31642 net.cpp:412] pool2 -> pool2
+I0511 18:25:26.090986 31642 net.cpp:151] Setting up pool2
+I0511 18:25:26.091032 31642 net.cpp:158] Top shape: 1 128 113 113 (1634432)
+I0511 18:25:26.091038 31642 net.cpp:166] Memory required for data: 349879628
+I0511 18:25:26.091044 31642 layer_factory.hpp:77] Creating layer conv3_1
+I0511 18:25:26.091068 31642 net.cpp:107] Creating Layer conv3_1
+I0511 18:25:26.091078 31642 net.cpp:455] conv3_1 <- pool2
+I0511 18:25:26.091096 31642 net.cpp:412] conv3_1 -> conv3_1
+I0511 18:25:26.091639 31642 net.cpp:151] Setting up conv3_1
+I0511 18:25:26.091670 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.091675 31642 net.cpp:166] Memory required for data: 362955084
+I0511 18:25:26.091687 31642 layer_factory.hpp:77] Creating layer relu3_1
+I0511 18:25:26.091711 31642 net.cpp:107] Creating Layer relu3_1
+I0511 18:25:26.091729 31642 net.cpp:455] relu3_1 <- conv3_1
+I0511 18:25:26.091751 31642 net.cpp:398] relu3_1 -> conv3_1 (in-place)
+I0511 18:25:26.091760 31642 net.cpp:151] Setting up relu3_1
+I0511 18:25:26.091768 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.091773 31642 net.cpp:166] Memory required for data: 376030540
+I0511 18:25:26.091794 31642 layer_factory.hpp:77] Creating layer conv3_2
+I0511 18:25:26.091805 31642 net.cpp:107] Creating Layer conv3_2
+I0511 18:25:26.091812 31642 net.cpp:455] conv3_2 <- conv3_1
+I0511 18:25:26.091820 31642 net.cpp:412] conv3_2 -> conv3_2
+I0511 18:25:26.092669 31642 net.cpp:151] Setting up conv3_2
+I0511 18:25:26.092694 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.092697 31642 net.cpp:166] Memory required for data: 389105996
+I0511 18:25:26.092710 31642 layer_factory.hpp:77] Creating layer relu3_2
+I0511 18:25:26.092731 31642 net.cpp:107] Creating Layer relu3_2
+I0511 18:25:26.092751 31642 net.cpp:455] relu3_2 <- conv3_2
+I0511 18:25:26.092793 31642 net.cpp:398] relu3_2 -> conv3_2 (in-place)
+I0511 18:25:26.092803 31642 net.cpp:151] Setting up relu3_2
+I0511 18:25:26.092824 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.092831 31642 net.cpp:166] Memory required for data: 402181452
+I0511 18:25:26.092852 31642 layer_factory.hpp:77] Creating layer conv3_3
+I0511 18:25:26.092876 31642 net.cpp:107] Creating Layer conv3_3
+I0511 18:25:26.092885 31642 net.cpp:455] conv3_3 <- conv3_2
+I0511 18:25:26.092898 31642 net.cpp:412] conv3_3 -> conv3_3
+I0511 18:25:26.093798 31642 net.cpp:151] Setting up conv3_3
+I0511 18:25:26.093829 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.093835 31642 net.cpp:166] Memory required for data: 415256908
+I0511 18:25:26.093858 31642 layer_factory.hpp:77] Creating layer relu3_3
+I0511 18:25:26.093883 31642 net.cpp:107] Creating Layer relu3_3
+I0511 18:25:26.093909 31642 net.cpp:455] relu3_3 <- conv3_3
+I0511 18:25:26.093917 31642 net.cpp:398] relu3_3 -> conv3_3 (in-place)
+I0511 18:25:26.093940 31642 net.cpp:151] Setting up relu3_3
+I0511 18:25:26.093948 31642 net.cpp:158] Top shape: 1 256 113 113 (3268864)
+I0511 18:25:26.093953 31642 net.cpp:166] Memory required for data: 428332364
+I0511 18:25:26.093972 31642 layer_factory.hpp:77] Creating layer pool3
+I0511 18:25:26.093984 31642 net.cpp:107] Creating Layer pool3
+I0511 18:25:26.094004 31642 net.cpp:455] pool3 <- conv3_3
+I0511 18:25:26.094029 31642 net.cpp:412] pool3 -> pool3
+I0511 18:25:26.094041 31642 net.cpp:151] Setting up pool3
+I0511 18:25:26.094050 31642 net.cpp:158] Top shape: 1 256 57 57 (831744)
+I0511 18:25:26.094056 31642 net.cpp:166] Memory required for data: 431659340
+I0511 18:25:26.094079 31642 layer_factory.hpp:77] Creating layer conv4_1
+I0511 18:25:26.094094 31642 net.cpp:107] Creating Layer conv4_1
+I0511 18:25:26.094128 31642 net.cpp:455] conv4_1 <- pool3
+I0511 18:25:26.094162 31642 net.cpp:412] conv4_1 -> conv4_1
+I0511 18:25:26.096230 31642 net.cpp:151] Setting up conv4_1
+I0511 18:25:26.096308 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.096318 31642 net.cpp:166] Memory required for data: 438313292
+I0511 18:25:26.096334 31642 layer_factory.hpp:77] Creating layer relu4_1
+I0511 18:25:26.096349 31642 net.cpp:107] Creating Layer relu4_1
+I0511 18:25:26.096359 31642 net.cpp:455] relu4_1 <- conv4_1
+I0511 18:25:26.096396 31642 net.cpp:398] relu4_1 -> conv4_1 (in-place)
+I0511 18:25:26.096426 31642 net.cpp:151] Setting up relu4_1
+I0511 18:25:26.096436 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.096446 31642 net.cpp:166] Memory required for data: 444967244
+I0511 18:25:26.096452 31642 layer_factory.hpp:77] Creating layer conv4_2
+I0511 18:25:26.096475 31642 net.cpp:107] Creating Layer conv4_2
+I0511 18:25:26.096482 31642 net.cpp:455] conv4_2 <- conv4_1
+I0511 18:25:26.096498 31642 net.cpp:412] conv4_2 -> conv4_2
+I0511 18:25:26.100136 31642 net.cpp:151] Setting up conv4_2
+I0511 18:25:26.100179 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.100188 31642 net.cpp:166] Memory required for data: 451621196
+I0511 18:25:26.100231 31642 layer_factory.hpp:77] Creating layer relu4_2
+I0511 18:25:26.100261 31642 net.cpp:107] Creating Layer relu4_2
+I0511 18:25:26.100273 31642 net.cpp:455] relu4_2 <- conv4_2
+I0511 18:25:26.100282 31642 net.cpp:398] relu4_2 -> conv4_2 (in-place)
+I0511 18:25:26.100293 31642 net.cpp:151] Setting up relu4_2
+I0511 18:25:26.100317 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.100327 31642 net.cpp:166] Memory required for data: 458275148
+I0511 18:25:26.100337 31642 layer_factory.hpp:77] Creating layer conv4_3
+I0511 18:25:26.100349 31642 net.cpp:107] Creating Layer conv4_3
+I0511 18:25:26.100375 31642 net.cpp:455] conv4_3 <- conv4_2
+I0511 18:25:26.100396 31642 net.cpp:412] conv4_3 -> conv4_3
+I0511 18:25:26.104212 31642 net.cpp:151] Setting up conv4_3
+I0511 18:25:26.104250 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.104259 31642 net.cpp:166] Memory required for data: 464929100
+I0511 18:25:26.104281 31642 layer_factory.hpp:77] Creating layer relu4_3
+I0511 18:25:26.104336 31642 net.cpp:107] Creating Layer relu4_3
+I0511 18:25:26.104343 31642 net.cpp:455] relu4_3 <- conv4_3
+I0511 18:25:26.104365 31642 net.cpp:398] relu4_3 -> conv4_3 (in-place)
+I0511 18:25:26.104377 31642 net.cpp:151] Setting up relu4_3
+I0511 18:25:26.104384 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.104390 31642 net.cpp:166] Memory required for data: 471583052
+I0511 18:25:26.104396 31642 layer_factory.hpp:77] Creating layer pool4
+I0511 18:25:26.104423 31642 net.cpp:107] Creating Layer pool4
+I0511 18:25:26.104431 31642 net.cpp:455] pool4 <- conv4_3
+I0511 18:25:26.104444 31642 net.cpp:412] pool4 -> pool4
+I0511 18:25:26.104478 31642 net.cpp:151] Setting up pool4
+I0511 18:25:26.104491 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.104518 31642 net.cpp:166] Memory required for data: 478237004
+I0511 18:25:26.104526 31642 layer_factory.hpp:77] Creating layer conv5_1
+I0511 18:25:26.104553 31642 net.cpp:107] Creating Layer conv5_1
+I0511 18:25:26.104565 31642 net.cpp:455] conv5_1 <- pool4
+I0511 18:25:26.104620 31642 net.cpp:412] conv5_1 -> conv5_1
+I0511 18:25:26.108009 31642 net.cpp:151] Setting up conv5_1
+I0511 18:25:26.108048 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.108057 31642 net.cpp:166] Memory required for data: 484890956
+I0511 18:25:26.108079 31642 layer_factory.hpp:77] Creating layer relu5_1
+I0511 18:25:26.108103 31642 net.cpp:107] Creating Layer relu5_1
+I0511 18:25:26.108129 31642 net.cpp:455] relu5_1 <- conv5_1
+I0511 18:25:26.108139 31642 net.cpp:398] relu5_1 -> conv5_1 (in-place)
+I0511 18:25:26.108163 31642 net.cpp:151] Setting up relu5_1
+I0511 18:25:26.108171 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.108177 31642 net.cpp:166] Memory required for data: 491544908
+I0511 18:25:26.108184 31642 layer_factory.hpp:77] Creating layer conv5_2
+I0511 18:25:26.108193 31642 net.cpp:107] Creating Layer conv5_2
+I0511 18:25:26.108216 31642 net.cpp:455] conv5_2 <- conv5_1
+I0511 18:25:26.108238 31642 net.cpp:412] conv5_2 -> conv5_2
+I0511 18:25:26.111663 31642 net.cpp:151] Setting up conv5_2
+I0511 18:25:26.111719 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.111727 31642 net.cpp:166] Memory required for data: 498198860
+I0511 18:25:26.111754 31642 layer_factory.hpp:77] Creating layer relu5_2
+I0511 18:25:26.111783 31642 net.cpp:107] Creating Layer relu5_2
+I0511 18:25:26.111809 31642 net.cpp:455] relu5_2 <- conv5_2
+I0511 18:25:26.111820 31642 net.cpp:398] relu5_2 -> conv5_2 (in-place)
+I0511 18:25:26.111846 31642 net.cpp:151] Setting up relu5_2
+I0511 18:25:26.111855 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.111861 31642 net.cpp:166] Memory required for data: 504852812
+I0511 18:25:26.111866 31642 layer_factory.hpp:77] Creating layer conv5_3
+I0511 18:25:26.111886 31642 net.cpp:107] Creating Layer conv5_3
+I0511 18:25:26.111907 31642 net.cpp:455] conv5_3 <- conv5_2
+I0511 18:25:26.111915 31642 net.cpp:412] conv5_3 -> conv5_3
+I0511 18:25:26.116914 31642 net.cpp:151] Setting up conv5_3
+I0511 18:25:26.116977 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.116986 31642 net.cpp:166] Memory required for data: 511506764
+I0511 18:25:26.116998 31642 layer_factory.hpp:77] Creating layer relu5_3
+I0511 18:25:26.117024 31642 net.cpp:107] Creating Layer relu5_3
+I0511 18:25:26.117049 31642 net.cpp:455] relu5_3 <- conv5_3
+I0511 18:25:26.117082 31642 net.cpp:398] relu5_3 -> conv5_3 (in-place)
+I0511 18:25:26.117097 31642 net.cpp:151] Setting up relu5_3
+I0511 18:25:26.117121 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117128 31642 net.cpp:166] Memory required for data: 518160716
+I0511 18:25:26.117135 31642 layer_factory.hpp:77] Creating layer pool5
+I0511 18:25:26.117144 31642 net.cpp:107] Creating Layer pool5
+I0511 18:25:26.117151 31642 net.cpp:455] pool5 <- conv5_3
+I0511 18:25:26.117179 31642 net.cpp:412] pool5 -> pool5
+I0511 18:25:26.117208 31642 net.cpp:151] Setting up pool5
+I0511 18:25:26.117236 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117274 31642 net.cpp:166] Memory required for data: 524814668
+I0511 18:25:26.117288 31642 layer_factory.hpp:77] Creating layer pool5_pool5_0_split
+I0511 18:25:26.117314 31642 net.cpp:107] Creating Layer pool5_pool5_0_split
+I0511 18:25:26.117336 31642 net.cpp:455] pool5_pool5_0_split <- pool5
+I0511 18:25:26.117360 31642 net.cpp:412] pool5_pool5_0_split -> pool5_pool5_0_split_0
+I0511 18:25:26.117390 31642 net.cpp:412] pool5_pool5_0_split -> pool5_pool5_0_split_1
+I0511 18:25:26.117400 31642 net.cpp:412] pool5_pool5_0_split -> pool5_pool5_0_split_2
+I0511 18:25:26.117417 31642 net.cpp:412] pool5_pool5_0_split -> pool5_pool5_0_split_3
+I0511 18:25:26.117453 31642 net.cpp:151] Setting up pool5_pool5_0_split
+I0511 18:25:26.117496 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117516 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117538 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117571 31642 net.cpp:158] Top shape: 1 512 57 57 (1663488)
+I0511 18:25:26.117583 31642 net.cpp:166] Memory required for data: 551430476
+I0511 18:25:26.117616 31642 layer_factory.hpp:77] Creating layer fc6_1
+I0511 18:25:26.117660 31642 net.cpp:107] Creating Layer fc6_1
+I0511 18:25:26.117673 31642 net.cpp:455] fc6_1 <- pool5_pool5_0_split_0
+I0511 18:25:26.117694 31642 net.cpp:412] fc6_1 -> fc6_1
+I0511 18:25:26.126111 31642 net.cpp:151] Setting up fc6_1
+I0511 18:25:26.126176 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.126189 31642 net.cpp:166] Memory required for data: 564738380
+I0511 18:25:26.126209 31642 layer_factory.hpp:77] Creating layer relu6_1
+I0511 18:25:26.126224 31642 net.cpp:107] Creating Layer relu6_1
+I0511 18:25:26.126232 31642 net.cpp:455] relu6_1 <- fc6_1
+I0511 18:25:26.126261 31642 net.cpp:398] relu6_1 -> fc6_1 (in-place)
+I0511 18:25:26.126292 31642 net.cpp:151] Setting up relu6_1
+I0511 18:25:26.126300 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.126307 31642 net.cpp:166] Memory required for data: 578046284
+I0511 18:25:26.126343 31642 layer_factory.hpp:77] Creating layer drop6_1
+I0511 18:25:26.126389 31642 net.cpp:107] Creating Layer drop6_1
+I0511 18:25:26.126399 31642 net.cpp:455] drop6_1 <- fc6_1
+I0511 18:25:26.126413 31642 net.cpp:398] drop6_1 -> fc6_1 (in-place)
+I0511 18:25:26.126456 31642 net.cpp:151] Setting up drop6_1
+I0511 18:25:26.126471 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.126482 31642 net.cpp:166] Memory required for data: 591354188
+I0511 18:25:26.126502 31642 layer_factory.hpp:77] Creating layer fc7_1
+I0511 18:25:26.126519 31642 net.cpp:107] Creating Layer fc7_1
+I0511 18:25:26.126554 31642 net.cpp:455] fc7_1 <- fc6_1
+I0511 18:25:26.126574 31642 net.cpp:412] fc7_1 -> fc7_1
+I0511 18:25:26.128263 31642 net.cpp:151] Setting up fc7_1
+I0511 18:25:26.128304 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.128307 31642 net.cpp:166] Memory required for data: 604662092
+I0511 18:25:26.128329 31642 layer_factory.hpp:77] Creating layer relu7_1
+I0511 18:25:26.128338 31642 net.cpp:107] Creating Layer relu7_1
+I0511 18:25:26.128358 31642 net.cpp:455] relu7_1 <- fc7_1
+I0511 18:25:26.128366 31642 net.cpp:398] relu7_1 -> fc7_1 (in-place)
+I0511 18:25:26.128377 31642 net.cpp:151] Setting up relu7_1
+I0511 18:25:26.128404 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.128427 31642 net.cpp:166] Memory required for data: 617969996
+I0511 18:25:26.128438 31642 layer_factory.hpp:77] Creating layer drop7_1
+I0511 18:25:26.128451 31642 net.cpp:107] Creating Layer drop7_1
+I0511 18:25:26.128458 31642 net.cpp:455] drop7_1 <- fc7_1
+I0511 18:25:26.128476 31642 net.cpp:398] drop7_1 -> fc7_1 (in-place)
+I0511 18:25:26.128485 31642 net.cpp:151] Setting up drop7_1
+I0511 18:25:26.128494 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.128516 31642 net.cpp:166] Memory required for data: 631277900
+I0511 18:25:26.128522 31642 layer_factory.hpp:77] Creating layer fc8_exper_1
+I0511 18:25:26.128536 31642 net.cpp:107] Creating Layer fc8_exper_1
+I0511 18:25:26.128607 31642 net.cpp:455] fc8_exper_1 <- fc7_1
+I0511 18:25:26.128641 31642 net.cpp:412] fc8_exper_1 -> fc8_exper_1
+I0511 18:25:26.128767 31642 net.cpp:151] Setting up fc8_exper_1
+I0511 18:25:26.128792 31642 net.cpp:158] Top shape: 1 2 57 57 (6498)
+I0511 18:25:26.128803 31642 net.cpp:166] Memory required for data: 631303892
+I0511 18:25:26.128818 31642 layer_factory.hpp:77] Creating layer fc6_2
+I0511 18:25:26.128859 31642 net.cpp:107] Creating Layer fc6_2
+I0511 18:25:26.128895 31642 net.cpp:455] fc6_2 <- pool5_pool5_0_split_1
+I0511 18:25:26.128929 31642 net.cpp:412] fc6_2 -> fc6_2
+I0511 18:25:26.135941 31642 net.cpp:151] Setting up fc6_2
+I0511 18:25:26.136001 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.136010 31642 net.cpp:166] Memory required for data: 644611796
+I0511 18:25:26.136034 31642 layer_factory.hpp:77] Creating layer relu6_2
+I0511 18:25:26.136065 31642 net.cpp:107] Creating Layer relu6_2
+I0511 18:25:26.136075 31642 net.cpp:455] relu6_2 <- fc6_2
+I0511 18:25:26.136104 31642 net.cpp:398] relu6_2 -> fc6_2 (in-place)
+I0511 18:25:26.136123 31642 net.cpp:151] Setting up relu6_2
+I0511 18:25:26.136142 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.136153 31642 net.cpp:166] Memory required for data: 657919700
+I0511 18:25:26.136164 31642 layer_factory.hpp:77] Creating layer drop6_2
+I0511 18:25:26.136179 31642 net.cpp:107] Creating Layer drop6_2
+I0511 18:25:26.136191 31642 net.cpp:455] drop6_2 <- fc6_2
+I0511 18:25:26.136209 31642 net.cpp:398] drop6_2 -> fc6_2 (in-place)
+I0511 18:25:26.136250 31642 net.cpp:151] Setting up drop6_2
+I0511 18:25:26.136287 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.136306 31642 net.cpp:166] Memory required for data: 671227604
+I0511 18:25:26.136317 31642 layer_factory.hpp:77] Creating layer fc7_2
+I0511 18:25:26.136359 31642 net.cpp:107] Creating Layer fc7_2
+I0511 18:25:26.136376 31642 net.cpp:455] fc7_2 <- fc6_2
+I0511 18:25:26.136402 31642 net.cpp:412] fc7_2 -> fc7_2
+I0511 18:25:26.138005 31642 net.cpp:151] Setting up fc7_2
+I0511 18:25:26.138052 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.138067 31642 net.cpp:166] Memory required for data: 684535508
+I0511 18:25:26.138082 31642 layer_factory.hpp:77] Creating layer relu7_2
+I0511 18:25:26.138094 31642 net.cpp:107] Creating Layer relu7_2
+I0511 18:25:26.138123 31642 net.cpp:455] relu7_2 <- fc7_2
+I0511 18:25:26.138150 31642 net.cpp:398] relu7_2 -> fc7_2 (in-place)
+I0511 18:25:26.138162 31642 net.cpp:151] Setting up relu7_2
+I0511 18:25:26.138195 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.138202 31642 net.cpp:166] Memory required for data: 697843412
+I0511 18:25:26.138211 31642 layer_factory.hpp:77] Creating layer drop7_2
+I0511 18:25:26.138222 31642 net.cpp:107] Creating Layer drop7_2
+I0511 18:25:26.138229 31642 net.cpp:455] drop7_2 <- fc7_2
+I0511 18:25:26.138238 31642 net.cpp:398] drop7_2 -> fc7_2 (in-place)
+I0511 18:25:26.138250 31642 net.cpp:151] Setting up drop7_2
+I0511 18:25:26.138259 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.138265 31642 net.cpp:166] Memory required for data: 711151316
+I0511 18:25:26.138273 31642 layer_factory.hpp:77] Creating layer fc8_exper_2
+I0511 18:25:26.138288 31642 net.cpp:107] Creating Layer fc8_exper_2
+I0511 18:25:26.138295 31642 net.cpp:455] fc8_exper_2 <- fc7_2
+I0511 18:25:26.138312 31642 net.cpp:412] fc8_exper_2 -> fc8_exper_2
+I0511 18:25:26.138377 31642 net.cpp:151] Setting up fc8_exper_2
+I0511 18:25:26.138412 31642 net.cpp:158] Top shape: 1 2 57 57 (6498)
+I0511 18:25:26.138425 31642 net.cpp:166] Memory required for data: 711177308
+I0511 18:25:26.138465 31642 layer_factory.hpp:77] Creating layer fc6_3
+I0511 18:25:26.138486 31642 net.cpp:107] Creating Layer fc6_3
+I0511 18:25:26.138521 31642 net.cpp:455] fc6_3 <- pool5_pool5_0_split_2
+I0511 18:25:26.138533 31642 net.cpp:412] fc6_3 -> fc6_3
+I0511 18:25:26.145383 31642 net.cpp:151] Setting up fc6_3
+I0511 18:25:26.145439 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.145449 31642 net.cpp:166] Memory required for data: 724485212
+I0511 18:25:26.145507 31642 layer_factory.hpp:77] Creating layer relu6_3
+I0511 18:25:26.145541 31642 net.cpp:107] Creating Layer relu6_3
+I0511 18:25:26.145550 31642 net.cpp:455] relu6_3 <- fc6_3
+I0511 18:25:26.145579 31642 net.cpp:398] relu6_3 -> fc6_3 (in-place)
+I0511 18:25:26.145593 31642 net.cpp:151] Setting up relu6_3
+I0511 18:25:26.145602 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.145608 31642 net.cpp:166] Memory required for data: 737793116
+I0511 18:25:26.145615 31642 layer_factory.hpp:77] Creating layer drop6_3
+I0511 18:25:26.145625 31642 net.cpp:107] Creating Layer drop6_3
+I0511 18:25:26.145648 31642 net.cpp:455] drop6_3 <- fc6_3
+I0511 18:25:26.145673 31642 net.cpp:398] drop6_3 -> fc6_3 (in-place)
+I0511 18:25:26.145689 31642 net.cpp:151] Setting up drop6_3
+I0511 18:25:26.145730 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.145774 31642 net.cpp:166] Memory required for data: 751101020
+I0511 18:25:26.145810 31642 layer_factory.hpp:77] Creating layer fc7_3
+I0511 18:25:26.145825 31642 net.cpp:107] Creating Layer fc7_3
+I0511 18:25:26.145855 31642 net.cpp:455] fc7_3 <- fc6_3
+I0511 18:25:26.145886 31642 net.cpp:412] fc7_3 -> fc7_3
+I0511 18:25:26.147775 31642 net.cpp:151] Setting up fc7_3
+I0511 18:25:26.147833 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.147841 31642 net.cpp:166] Memory required for data: 764408924
+I0511 18:25:26.147881 31642 layer_factory.hpp:77] Creating layer relu7_3
+I0511 18:25:26.147923 31642 net.cpp:107] Creating Layer relu7_3
+I0511 18:25:26.147933 31642 net.cpp:455] relu7_3 <- fc7_3
+I0511 18:25:26.147974 31642 net.cpp:398] relu7_3 -> fc7_3 (in-place)
+I0511 18:25:26.148001 31642 net.cpp:151] Setting up relu7_3
+I0511 18:25:26.148011 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.148046 31642 net.cpp:166] Memory required for data: 777716828
+I0511 18:25:26.148069 31642 layer_factory.hpp:77] Creating layer drop7_3
+I0511 18:25:26.148079 31642 net.cpp:107] Creating Layer drop7_3
+I0511 18:25:26.148104 31642 net.cpp:455] drop7_3 <- fc7_3
+I0511 18:25:26.148113 31642 net.cpp:398] drop7_3 -> fc7_3 (in-place)
+I0511 18:25:26.148126 31642 net.cpp:151] Setting up drop7_3
+I0511 18:25:26.148150 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.148157 31642 net.cpp:166] Memory required for data: 791024732
+I0511 18:25:26.148164 31642 layer_factory.hpp:77] Creating layer fc8_exper_3
+I0511 18:25:26.148210 31642 net.cpp:107] Creating Layer fc8_exper_3
+I0511 18:25:26.148248 31642 net.cpp:455] fc8_exper_3 <- fc7_3
+I0511 18:25:26.148288 31642 net.cpp:412] fc8_exper_3 -> fc8_exper_3
+I0511 18:25:26.148407 31642 net.cpp:151] Setting up fc8_exper_3
+I0511 18:25:26.148458 31642 net.cpp:158] Top shape: 1 2 57 57 (6498)
+I0511 18:25:26.148488 31642 net.cpp:166] Memory required for data: 791050724
+I0511 18:25:26.148535 31642 layer_factory.hpp:77] Creating layer fc6_4
+I0511 18:25:26.148612 31642 net.cpp:107] Creating Layer fc6_4
+I0511 18:25:26.148669 31642 net.cpp:455] fc6_4 <- pool5_pool5_0_split_3
+I0511 18:25:26.148727 31642 net.cpp:412] fc6_4 -> fc6_4
+I0511 18:25:26.155216 31642 net.cpp:151] Setting up fc6_4
+I0511 18:25:26.155278 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.155287 31642 net.cpp:166] Memory required for data: 804358628
+I0511 18:25:26.155299 31642 layer_factory.hpp:77] Creating layer relu6_4
+I0511 18:25:26.155313 31642 net.cpp:107] Creating Layer relu6_4
+I0511 18:25:26.155340 31642 net.cpp:455] relu6_4 <- fc6_4
+I0511 18:25:26.155351 31642 net.cpp:398] relu6_4 -> fc6_4 (in-place)
+I0511 18:25:26.155381 31642 net.cpp:151] Setting up relu6_4
+I0511 18:25:26.155407 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.155414 31642 net.cpp:166] Memory required for data: 817666532
+I0511 18:25:26.155421 31642 layer_factory.hpp:77] Creating layer drop6_4
+I0511 18:25:26.155432 31642 net.cpp:107] Creating Layer drop6_4
+I0511 18:25:26.155441 31642 net.cpp:455] drop6_4 <- fc6_4
+I0511 18:25:26.155449 31642 net.cpp:398] drop6_4 -> fc6_4 (in-place)
+I0511 18:25:26.155489 31642 net.cpp:151] Setting up drop6_4
+I0511 18:25:26.155514 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.155519 31642 net.cpp:166] Memory required for data: 830974436
+I0511 18:25:26.155522 31642 layer_factory.hpp:77] Creating layer fc7_4
+I0511 18:25:26.155530 31642 net.cpp:107] Creating Layer fc7_4
+I0511 18:25:26.155534 31642 net.cpp:455] fc7_4 <- fc6_4
+I0511 18:25:26.155541 31642 net.cpp:412] fc7_4 -> fc7_4
+I0511 18:25:26.157047 31642 net.cpp:151] Setting up fc7_4
+I0511 18:25:26.157074 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.157078 31642 net.cpp:166] Memory required for data: 844282340
+I0511 18:25:26.157084 31642 layer_factory.hpp:77] Creating layer relu7_4
+I0511 18:25:26.157106 31642 net.cpp:107] Creating Layer relu7_4
+I0511 18:25:26.157110 31642 net.cpp:455] relu7_4 <- fc7_4
+I0511 18:25:26.157130 31642 net.cpp:398] relu7_4 -> fc7_4 (in-place)
+I0511 18:25:26.157136 31642 net.cpp:151] Setting up relu7_4
+I0511 18:25:26.157156 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.157164 31642 net.cpp:166] Memory required for data: 857590244
+I0511 18:25:26.157167 31642 layer_factory.hpp:77] Creating layer drop7_4
+I0511 18:25:26.157174 31642 net.cpp:107] Creating Layer drop7_4
+I0511 18:25:26.157186 31642 net.cpp:455] drop7_4 <- fc7_4
+I0511 18:25:26.157194 31642 net.cpp:398] drop7_4 -> fc7_4 (in-place)
+I0511 18:25:26.157204 31642 net.cpp:151] Setting up drop7_4
+I0511 18:25:26.157213 31642 net.cpp:158] Top shape: 1 1024 57 57 (3326976)
+I0511 18:25:26.157236 31642 net.cpp:166] Memory required for data: 870898148
+I0511 18:25:26.157244 31642 layer_factory.hpp:77] Creating layer fc8_exper_4
+I0511 18:25:26.157272 31642 net.cpp:107] Creating Layer fc8_exper_4
+I0511 18:25:26.157310 31642 net.cpp:455] fc8_exper_4 <- fc7_4
+I0511 18:25:26.157323 31642 net.cpp:412] fc8_exper_4 -> fc8_exper_4
+I0511 18:25:26.157438 31642 net.cpp:151] Setting up fc8_exper_4
+I0511 18:25:26.157482 31642 net.cpp:158] Top shape: 1 2 57 57 (6498)
+I0511 18:25:26.157491 31642 net.cpp:166] Memory required for data: 870924140
+I0511 18:25:26.157511 31642 layer_factory.hpp:77] Creating layer fc8_exper
+I0511 18:25:26.157558 31642 net.cpp:107] Creating Layer fc8_exper
+I0511 18:25:26.157594 31642 net.cpp:455] fc8_exper <- fc8_exper_1
+I0511 18:25:26.157654 31642 net.cpp:455] fc8_exper <- fc8_exper_2
+I0511 18:25:26.157707 31642 net.cpp:455] fc8_exper <- fc8_exper_3
+I0511 18:25:26.157763 31642 net.cpp:455] fc8_exper <- fc8_exper_4
+I0511 18:25:26.157846 31642 net.cpp:412] fc8_exper -> fc8_exper
+I0511 18:25:26.157886 31642 net.cpp:151] Setting up fc8_exper
+I0511 18:25:26.157922 31642 net.cpp:158] Top shape: 1 2 57 57 (6498)
+I0511 18:25:26.157959 31642 net.cpp:166] Memory required for data: 870950132
+I0511 18:25:26.157972 31642 layer_factory.hpp:77] Creating layer upsample
+I0511 18:25:26.158025 31642 net.cpp:107] Creating Layer upsample
+I0511 18:25:26.158041 31642 net.cpp:455] upsample <- fc8_exper
+I0511 18:25:26.158077 31642 net.cpp:412] upsample -> upscore
+I0511 18:25:26.158164 31642 net.cpp:151] Setting up upsample
+I0511 18:25:26.158213 31642 net.cpp:158] Top shape: 1 2 457 457 (417698)
+I0511 18:25:26.158247 31642 net.cpp:166] Memory required for data: 872620924
+I0511 18:25:26.158290 31642 layer_factory.hpp:77] Creating layer score
+I0511 18:25:26.158306 31642 net.cpp:107] Creating Layer score
+I0511 18:25:26.158336 31642 net.cpp:455] score <- upscore
+I0511 18:25:26.158365 31642 net.cpp:455] score <- data_patch_transformer1_0_split_1
+I0511 18:25:26.158406 31642 net.cpp:412] score -> score
+I0511 18:25:26.160639 31642 crop_layer.cpp:76] cropinfo:4,4
+I0511 18:25:26.160686 31642 net.cpp:151] Setting up score
+I0511 18:25:26.160699 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160706 31642 net.cpp:166] Memory required for data: 874233732
+I0511 18:25:26.160713 31642 layer_factory.hpp:77] Creating layer score_score_0_split
+I0511 18:25:26.160725 31642 net.cpp:107] Creating Layer score_score_0_split
+I0511 18:25:26.160733 31642 net.cpp:455] score_score_0_split <- score
+I0511 18:25:26.160742 31642 net.cpp:412] score_score_0_split -> score_score_0_split_0
+I0511 18:25:26.160784 31642 net.cpp:412] score_score_0_split -> score_score_0_split_1
+I0511 18:25:26.160795 31642 net.cpp:412] score_score_0_split -> score_score_0_split_2
+I0511 18:25:26.160809 31642 net.cpp:151] Setting up score_score_0_split
+I0511 18:25:26.160846 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160854 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160861 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160868 31642 net.cpp:166] Memory required for data: 879072156
+I0511 18:25:26.160876 31642 layer_factory.hpp:77] Creating layer splitting
+I0511 18:25:26.160883 31642 net.cpp:107] Creating Layer splitting
+I0511 18:25:26.160890 31642 net.cpp:455] splitting <- score_score_0_split_0
+I0511 18:25:26.160903 31642 net.cpp:412] splitting -> unary
+I0511 18:25:26.160913 31642 net.cpp:412] splitting -> Q0
+I0511 18:25:26.160923 31642 net.cpp:151] Setting up splitting
+I0511 18:25:26.160931 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160939 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.160945 31642 net.cpp:166] Memory required for data: 882297772
+I0511 18:25:26.160951 31642 layer_factory.hpp:77] Creating layer inference
+I0511 18:25:26.160964 31642 net.cpp:107] Creating Layer inference
+I0511 18:25:26.160971 31642 net.cpp:455] inference <- unary
+I0511 18:25:26.160979 31642 net.cpp:455] inference <- Q0
+I0511 18:25:26.160986 31642 net.cpp:455] inference <- data_patch_transformer1_0_split_2
+I0511 18:25:26.160995 31642 net.cpp:412] inference -> pred
+I0511 18:25:26.161028 31642 multi_stage_meanfield.cpp:48] This implementation has not been tested batch size > 1.
+I0511 18:25:26.206028 31642 multi_stage_meanfield.cpp:151] MultiStageMeanfieldLayer initialized.
+I0511 18:25:26.237507 31642 net.cpp:151] Setting up inference
+I0511 18:25:26.237560 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.237568 31642 net.cpp:166] Memory required for data: 883910580
+I0511 18:25:26.237614 31642 layer_factory.hpp:77] Creating layer pred_inference_0_split
+I0511 18:25:26.237643 31642 net.cpp:107] Creating Layer pred_inference_0_split
+I0511 18:25:26.237668 31642 net.cpp:455] pred_inference_0_split <- pred
+I0511 18:25:26.237725 31642 net.cpp:412] pred_inference_0_split -> pred_inference_0_split_0
+I0511 18:25:26.237737 31642 net.cpp:412] pred_inference_0_split -> pred_inference_0_split_1
+I0511 18:25:26.237748 31642 net.cpp:151] Setting up pred_inference_0_split
+I0511 18:25:26.237807 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.237830 31642 net.cpp:158] Top shape: 1 2 449 449 (403202)
+I0511 18:25:26.237836 31642 net.cpp:166] Memory required for data: 887136196
+I0511 18:25:26.237843 31642 layer_factory.hpp:77] Creating layer loss
+I0511 18:25:26.237920 31642 net.cpp:107] Creating Layer loss
+I0511 18:25:26.237957 31642 net.cpp:455] loss <- pred_inference_0_split_0
+I0511 18:25:26.238011 31642 net.cpp:455] loss <- label_patch_transformer1_1_split_0
+I0511 18:25:26.238042 31642 net.cpp:412] loss -> (automatic)
+I0511 18:25:26.238087 31642 layer_factory.hpp:77] Creating layer loss
+I0511 18:25:26.239037 31642 net.cpp:151] Setting up loss
+I0511 18:25:26.239097 31642 net.cpp:158] Top shape: (1)
+I0511 18:25:26.239105 31642 net.cpp:161]     with loss weight 0.5
+I0511 18:25:26.239179 31642 net.cpp:166] Memory required for data: 887136200
+I0511 18:25:26.239203 31642 layer_factory.hpp:77] Creating layer accuracy
+I0511 18:25:26.239217 31642 net.cpp:107] Creating Layer accuracy
+I0511 18:25:26.239223 31642 net.cpp:455] accuracy <- pred_inference_0_split_1
+I0511 18:25:26.239233 31642 net.cpp:455] accuracy <- label_patch_transformer1_1_split_1
+I0511 18:25:26.239284 31642 net.cpp:412] accuracy -> accuracy
+I0511 18:25:26.239328 31642 net.cpp:151] Setting up accuracy
+I0511 18:25:26.239354 31642 net.cpp:158] Top shape: 1 1 1 3 (3)
+I0511 18:25:26.239399 31642 net.cpp:166] Memory required for data: 887136212
+I0511 18:25:26.239410 31642 layer_factory.hpp:77] Creating layer loss_deep
+I0511 18:25:26.239524 31642 net.cpp:107] Creating Layer loss_deep
+I0511 18:25:26.239539 31642 net.cpp:455] loss_deep <- score_score_0_split_1
+I0511 18:25:26.239564 31642 net.cpp:455] loss_deep <- label_patch_transformer1_1_split_2
+I0511 18:25:26.239581 31642 net.cpp:412] loss_deep -> (automatic)
+I0511 18:25:26.239650 31642 layer_factory.hpp:77] Creating layer loss_deep
+I0511 18:25:26.240137 31642 net.cpp:151] Setting up loss_deep
+I0511 18:25:26.240171 31642 net.cpp:158] Top shape: (1)
+I0511 18:25:26.240180 31642 net.cpp:161]     with loss weight 0.5
+I0511 18:25:26.240229 31642 net.cpp:166] Memory required for data: 887136216
+I0511 18:25:26.240255 31642 layer_factory.hpp:77] Creating layer accuracy_deep
+I0511 18:25:26.240267 31642 net.cpp:107] Creating Layer accuracy_deep
+I0511 18:25:26.240288 31642 net.cpp:455] accuracy_deep <- score_score_0_split_2
+I0511 18:25:26.240298 31642 net.cpp:455] accuracy_deep <- label_patch_transformer1_1_split_3
+I0511 18:25:26.240306 31642 net.cpp:412] accuracy_deep -> accuracy_2
+I0511 18:25:26.240352 31642 net.cpp:151] Setting up accuracy_deep
+I0511 18:25:26.240375 31642 net.cpp:158] Top shape: 1 1 1 3 (3)
+I0511 18:25:26.240396 31642 net.cpp:166] Memory required for data: 887136228
+I0511 18:25:26.240459 31642 layer_factory.hpp:77] Creating layer silence
+I0511 18:25:26.240471 31642 net.cpp:107] Creating Layer silence
+I0511 18:25:26.240479 31642 net.cpp:455] silence <- data_dim
+I0511 18:25:26.240487 31642 net.cpp:151] Setting up silence
+I0511 18:25:26.240494 31642 net.cpp:166] Memory required for data: 887136228
+I0511 18:25:26.240501 31642 net.cpp:229] silence does not need backward computation.
+I0511 18:25:26.240553 31642 net.cpp:229] accuracy_deep does not need backward computation.
+I0511 18:25:26.240576 31642 net.cpp:227] loss_deep needs backward computation.
+I0511 18:25:26.240603 31642 net.cpp:229] accuracy does not need backward computation.
+I0511 18:25:26.240612 31642 net.cpp:227] loss needs backward computation.
+I0511 18:25:26.240669 31642 net.cpp:227] pred_inference_0_split needs backward computation.
+I0511 18:25:26.240677 31642 net.cpp:227] inference needs backward computation.
+I0511 18:25:26.240689 31642 net.cpp:227] splitting needs backward computation.
+I0511 18:25:26.240696 31642 net.cpp:227] score_score_0_split needs backward computation.
+I0511 18:25:26.240716 31642 net.cpp:227] score needs backward computation.
+I0511 18:25:26.240739 31642 net.cpp:227] upsample needs backward computation.
+I0511 18:25:26.240782 31642 net.cpp:227] fc8_exper needs backward computation.
+I0511 18:25:26.240792 31642 net.cpp:227] fc8_exper_4 needs backward computation.
+I0511 18:25:26.240798 31642 net.cpp:227] drop7_4 needs backward computation.
+I0511 18:25:26.240806 31642 net.cpp:227] relu7_4 needs backward computation.
+I0511 18:25:26.240816 31642 net.cpp:227] fc7_4 needs backward computation.
+I0511 18:25:26.240833 31642 net.cpp:227] drop6_4 needs backward computation.
+I0511 18:25:26.240897 31642 net.cpp:227] relu6_4 needs backward computation.
+I0511 18:25:26.240906 31642 net.cpp:227] fc6_4 needs backward computation.
+I0511 18:25:26.240914 31642 net.cpp:227] fc8_exper_3 needs backward computation.
+I0511 18:25:26.240941 31642 net.cpp:227] drop7_3 needs backward computation.
+I0511 18:25:26.240952 31642 net.cpp:227] relu7_3 needs backward computation.
+I0511 18:25:26.241020 31642 net.cpp:227] fc7_3 needs backward computation.
+I0511 18:25:26.241034 31642 net.cpp:227] drop6_3 needs backward computation.
+I0511 18:25:26.241050 31642 net.cpp:227] relu6_3 needs backward computation.
+I0511 18:25:26.241076 31642 net.cpp:227] fc6_3 needs backward computation.
+I0511 18:25:26.241122 31642 net.cpp:227] fc8_exper_2 needs backward computation.
+I0511 18:25:26.241144 31642 net.cpp:227] drop7_2 needs backward computation.
+I0511 18:25:26.241148 31642 net.cpp:227] relu7_2 needs backward computation.
+I0511 18:25:26.241153 31642 net.cpp:227] fc7_2 needs backward computation.
+I0511 18:25:26.241155 31642 net.cpp:227] drop6_2 needs backward computation.
+I0511 18:25:26.241158 31642 net.cpp:227] relu6_2 needs backward computation.
+I0511 18:25:26.241247 31642 net.cpp:227] fc6_2 needs backward computation.
+I0511 18:25:26.241257 31642 net.cpp:227] fc8_exper_1 needs backward computation.
+I0511 18:25:26.241283 31642 net.cpp:227] drop7_1 needs backward computation.
+I0511 18:25:26.241288 31642 net.cpp:227] relu7_1 needs backward computation.
+I0511 18:25:26.241365 31642 net.cpp:227] fc7_1 needs backward computation.
+I0511 18:25:26.241376 31642 net.cpp:227] drop6_1 needs backward computation.
+I0511 18:25:26.241399 31642 net.cpp:227] relu6_1 needs backward computation.
+I0511 18:25:26.241423 31642 net.cpp:227] fc6_1 needs backward computation.
+I0511 18:25:26.241482 31642 net.cpp:227] pool5_pool5_0_split needs backward computation.
+I0511 18:25:26.241495 31642 net.cpp:227] pool5 needs backward computation.
+I0511 18:25:26.241510 31642 net.cpp:227] relu5_3 needs backward computation.
+I0511 18:25:26.241533 31642 net.cpp:227] conv5_3 needs backward computation.
+I0511 18:25:26.241544 31642 net.cpp:227] relu5_2 needs backward computation.
+I0511 18:25:26.241556 31642 net.cpp:227] conv5_2 needs backward computation.
+I0511 18:25:26.241609 31642 net.cpp:227] relu5_1 needs backward computation.
+I0511 18:25:26.241643 31642 net.cpp:227] conv5_1 needs backward computation.
+I0511 18:25:26.241672 31642 net.cpp:227] pool4 needs backward computation.
+I0511 18:25:26.241729 31642 net.cpp:227] relu4_3 needs backward computation.
+I0511 18:25:26.241755 31642 net.cpp:227] conv4_3 needs backward computation.
+I0511 18:25:26.241807 31642 net.cpp:227] relu4_2 needs backward computation.
+I0511 18:25:26.241839 31642 net.cpp:227] conv4_2 needs backward computation.
+I0511 18:25:26.241847 31642 net.cpp:227] relu4_1 needs backward computation.
+I0511 18:25:26.241853 31642 net.cpp:227] conv4_1 needs backward computation.
+I0511 18:25:26.241860 31642 net.cpp:227] pool3 needs backward computation.
+I0511 18:25:26.241868 31642 net.cpp:227] relu3_3 needs backward computation.
+I0511 18:25:26.241886 31642 net.cpp:227] conv3_3 needs backward computation.
+I0511 18:25:26.241930 31642 net.cpp:227] relu3_2 needs backward computation.
+I0511 18:25:26.241952 31642 net.cpp:227] conv3_2 needs backward computation.
+I0511 18:25:26.241960 31642 net.cpp:227] relu3_1 needs backward computation.
+I0511 18:25:26.241966 31642 net.cpp:227] conv3_1 needs backward computation.
+I0511 18:25:26.242022 31642 net.cpp:227] pool2 needs backward computation.
+I0511 18:25:26.242044 31642 net.cpp:227] relu2_2 needs backward computation.
+I0511 18:25:26.242051 31642 net.cpp:227] conv2_2 needs backward computation.
+I0511 18:25:26.242071 31642 net.cpp:227] relu2_1 needs backward computation.
+I0511 18:25:26.242091 31642 net.cpp:227] conv2_1 needs backward computation.
+I0511 18:25:26.242137 31642 net.cpp:227] pool1 needs backward computation.
+I0511 18:25:26.242144 31642 net.cpp:227] relu1_2 needs backward computation.
+I0511 18:25:26.242152 31642 net.cpp:227] conv1_2 needs backward computation.
+I0511 18:25:26.242163 31642 net.cpp:227] relu1_1 needs backward computation.
+I0511 18:25:26.242192 31642 net.cpp:227] conv1_1 needs backward computation.
+I0511 18:25:26.242302 31642 net.cpp:229] label_patch_transformer1_1_split does not need backward computation.
+I0511 18:25:26.242391 31642 net.cpp:229] data_patch_transformer1_0_split does not need backward computation.
+I0511 18:25:26.242516 31642 net.cpp:229] patch_transformer1 does not need backward computation.
+I0511 18:25:26.242544 31642 net.cpp:229] rawdata does not need backward computation.
+I0511 18:25:26.242552 31642 net.cpp:271] This network produces output accuracy
+I0511 18:25:26.242571 31642 net.cpp:271] This network produces output accuracy_2
+I0511 18:25:26.242662 31642 net.cpp:284] Network initialization done.
+I0511 18:25:26.243151 31642 solver.cpp:60] Solver scaffolding done.
+I0511 18:25:26.243928 31642 caffe.cpp:129] Finetuning from ./snapshots/dl2crf_iter_17920.caffemodel
+I0511 18:25:26.766507 31642 caffe.cpp:219] Starting Optimization
+I0511 18:25:26.766597 31642 solver.cpp:280] Solving DeepLab2-VGG16-CRF
+I0511 18:25:26.766607 31642 solver.cpp:281] Learning Rate Policy: step
+I0511 18:26:42.902832 31642 solver.cpp:229] Iteration 0, loss = 0.0672769
+I0511 18:26:42.909531 31642 solver.cpp:245]     Train net output #0: accuracy = 0.984107
+I0511 18:26:42.909564 31642 solver.cpp:245]     Train net output #1: accuracy = 0.502328
+I0511 18:26:42.909656 31642 solver.cpp:245]     Train net output #2: accuracy = 0.494383
+I0511 18:26:42.909803 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.984117
+I0511 18:26:42.909817 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.50325
+I0511 18:26:42.909827 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.495316
+I0511 18:26:42.909868 31642 sgd_solver.cpp:106] Iteration 0, lr = 5e-06
+I0511 18:34:17.659894 31642 solver.cpp:229] Iteration 10, loss = 0.076741
+I0511 18:34:17.660128 31642 solver.cpp:245]     Train net output #0: accuracy = 0.966548
+I0511 18:34:17.660142 31642 solver.cpp:245]     Train net output #1: accuracy = 0.851641
+I0511 18:34:17.660146 31642 solver.cpp:245]     Train net output #2: accuracy = 0.791494
+I0511 18:34:17.660151 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.962813
+I0511 18:34:17.660154 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.827805
+I0511 18:34:17.660158 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.768624
+I0511 18:34:17.660166 31642 sgd_solver.cpp:106] Iteration 10, lr = 5e-06
+I0511 18:41:54.645552 31642 solver.cpp:229] Iteration 20, loss = 0.0803946
+I0511 18:41:54.645823 31642 solver.cpp:245]     Train net output #0: accuracy = 0.986072
+I0511 18:41:54.645939 31642 solver.cpp:245]     Train net output #1: accuracy = 0.584092
+I0511 18:41:54.645949 31642 solver.cpp:245]     Train net output #2: accuracy = 0.569105
+I0511 18:41:54.645956 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.985819
+I0511 18:41:54.646083 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.617342
+I0511 18:41:54.646095 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.59179
+I0511 18:41:54.646102 31642 sgd_solver.cpp:106] Iteration 20, lr = 5e-06
+I0511 18:49:28.786322 31642 solver.cpp:229] Iteration 30, loss = 0.0822359
+I0511 18:49:28.786557 31642 solver.cpp:245]     Train net output #0: accuracy = 0.968854
+I0511 18:49:28.786569 31642 solver.cpp:245]     Train net output #1: accuracy = 0.664923
+I0511 18:49:28.786574 31642 solver.cpp:245]     Train net output #2: accuracy = 0.635303
+I0511 18:49:28.786578 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.967922
+I0511 18:49:28.786597 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.667382
+I0511 18:49:28.786602 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.63364
+I0511 18:49:28.786609 31642 sgd_solver.cpp:106] Iteration 30, lr = 5e-06
+I0511 18:57:03.686327 31642 solver.cpp:229] Iteration 40, loss = 0.0786095
+I0511 18:57:03.686497 31642 solver.cpp:245]     Train net output #0: accuracy = 0.976488
+I0511 18:57:03.686506 31642 solver.cpp:245]     Train net output #1: accuracy = 0.647085
+I0511 18:57:03.686511 31642 solver.cpp:245]     Train net output #2: accuracy = 0.626581
+I0511 18:57:03.686514 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.976637
+I0511 18:57:03.686518 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.662979
+I0511 18:57:03.686542 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.638015
+I0511 18:57:03.686583 31642 sgd_solver.cpp:106] Iteration 40, lr = 5e-06
+I0511 19:04:38.765787 31642 solver.cpp:229] Iteration 50, loss = 0.10229
+I0511 19:04:38.772336 31642 solver.cpp:245]     Train net output #0: accuracy = 0.955432
+I0511 19:04:38.772361 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5562
+I0511 19:04:38.772368 31642 solver.cpp:245]     Train net output #2: accuracy = 0.533273
+I0511 19:04:38.772374 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.956964
+I0511 19:04:38.772379 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.571508
+I0511 19:04:38.772384 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.549079
+I0511 19:04:38.772414 31642 sgd_solver.cpp:106] Iteration 50, lr = 5e-06
+I0511 19:12:14.680091 31642 solver.cpp:229] Iteration 60, loss = 0.0816232
+I0511 19:12:14.684806 31642 solver.cpp:245]     Train net output #0: accuracy = 0.974251
+I0511 19:12:14.684834 31642 solver.cpp:245]     Train net output #1: accuracy = 0.705186
+I0511 19:12:14.684840 31642 solver.cpp:245]     Train net output #2: accuracy = 0.654456
+I0511 19:12:14.684845 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.972917
+I0511 19:12:14.684860 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.675153
+I0511 19:12:14.684871 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.631577
+I0511 19:12:14.684928 31642 sgd_solver.cpp:106] Iteration 60, lr = 5e-06
+I0511 19:19:51.409314 31642 solver.cpp:229] Iteration 70, loss = 0.118458
+I0511 19:19:51.409621 31642 solver.cpp:245]     Train net output #0: accuracy = 0.99996
+I0511 19:19:51.409636 31642 solver.cpp:245]     Train net output #1: accuracy = 0.99996
+I0511 19:19:51.409643 31642 solver.cpp:245]     Train net output #2: accuracy = 0.49998
+I0511 19:19:51.409651 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.999752
+I0511 19:19:51.409670 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.999752
+I0511 19:19:51.409678 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.499876
+I0511 19:19:51.409698 31642 sgd_solver.cpp:106] Iteration 70, lr = 5e-06
+I0511 19:27:27.598080 31642 solver.cpp:229] Iteration 80, loss = 0.0799944
+I0511 19:27:27.598356 31642 solver.cpp:245]     Train net output #0: accuracy = 0.927054
+I0511 19:27:27.598408 31642 solver.cpp:245]     Train net output #1: accuracy = 0.579907
+I0511 19:27:27.598467 31642 solver.cpp:245]     Train net output #2: accuracy = 0.541936
+I0511 19:27:27.598498 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.925858
+I0511 19:27:27.598508 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.584103
+I0511 19:27:27.598516 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.544494
+I0511 19:27:27.598527 31642 sgd_solver.cpp:106] Iteration 80, lr = 5e-06
+I0511 19:35:08.302808 31642 solver.cpp:229] Iteration 90, loss = 0.100972
+I0511 19:35:08.303047 31642 solver.cpp:245]     Train net output #0: accuracy = 0.981701
+I0511 19:35:08.303061 31642 solver.cpp:245]     Train net output #1: accuracy = 0.936234
+I0511 19:35:08.303069 31642 solver.cpp:245]     Train net output #2: accuracy = 0.856747
+I0511 19:35:08.303076 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982862
+I0511 19:35:08.303084 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.921267
+I0511 19:35:08.303092 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.860036
+I0511 19:35:08.303102 31642 sgd_solver.cpp:106] Iteration 90, lr = 5e-06
+I0511 19:42:47.986076 31642 solver.cpp:229] Iteration 100, loss = 0.0933943
+I0511 19:42:47.986368 31642 solver.cpp:245]     Train net output #0: accuracy = 0.959455
+I0511 19:42:47.986395 31642 solver.cpp:245]     Train net output #1: accuracy = 0.901831
+I0511 19:42:47.986421 31642 solver.cpp:245]     Train net output #2: accuracy = 0.783941
+I0511 19:42:47.986430 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.957138
+I0511 19:42:47.986443 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.859209
+I0511 19:42:47.986466 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.762327
+I0511 19:42:47.986479 31642 sgd_solver.cpp:106] Iteration 100, lr = 5e-06
+I0511 19:50:29.379308 31642 solver.cpp:229] Iteration 110, loss = 0.122962
+I0511 19:50:29.379685 31642 solver.cpp:245]     Train net output #0: accuracy = 0.979896
+I0511 19:50:29.379750 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499404
+I0511 19:50:29.379778 31642 solver.cpp:245]     Train net output #2: accuracy = 0.491301
+I0511 19:50:29.379799 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.979177
+I0511 19:50:29.379834 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.497467
+I0511 19:50:29.379858 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.489707
+I0511 19:50:29.379869 31642 sgd_solver.cpp:106] Iteration 110, lr = 5e-06
+I0511 19:58:13.268859 31642 solver.cpp:229] Iteration 120, loss = 0.104467
+I0511 19:58:13.269213 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993681
+I0511 19:58:13.269232 31642 solver.cpp:245]     Train net output #1: accuracy = 0.993681
+I0511 19:58:13.269242 31642 solver.cpp:245]     Train net output #2: accuracy = 0.49684
+I0511 19:58:13.269249 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993805
+I0511 19:58:13.269258 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.993805
+I0511 19:58:13.269268 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.496902
+I0511 19:58:13.269300 31642 sgd_solver.cpp:106] Iteration 120, lr = 5e-06
+I0511 20:05:44.253067 31642 solver.cpp:229] Iteration 130, loss = 0.0824265
+I0511 20:05:44.253306 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993834
+I0511 20:05:44.253317 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0511 20:05:44.253326 31642 solver.cpp:245]     Train net output #2: accuracy = 0.496917
+I0511 20:05:44.253334 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993834
+I0511 20:05:44.253341 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0511 20:05:44.253348 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.496917
+...
+I0511 23:35:14.709414 31642 sgd_solver.cpp:106] Iteration 420, lr = 5e-06
+I0511 23:42:25.550889 31642 solver.cpp:229] Iteration 430, loss = 0.107209
+I0511 23:42:25.551194 31642 solver.cpp:245]     Train net output #0: accuracy = 0.987396
+I0511 23:42:25.551206 31642 solver.cpp:245]     Train net output #1: accuracy = 0.874978
+I0511 23:42:25.551210 31642 solver.cpp:245]     Train net output #2: accuracy = 0.799719
+I0511 23:42:25.551214 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.98631
+I0511 23:42:25.551218 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.839855
+I0511 23:42:25.551223 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.777269
+I0511 23:42:25.551242 31642 sgd_solver.cpp:106] Iteration 430, lr = 5e-06
+I0511 23:49:36.059252 31642 solver.cpp:229] Iteration 440, loss = 0.0683975
+I0511 23:49:36.059598 31642 solver.cpp:245]     Train net output #0: accuracy = 0.970397
+I0511 23:49:36.059628 31642 solver.cpp:245]     Train net output #1: accuracy = 0.689593
+I0511 23:49:36.059631 31642 solver.cpp:245]     Train net output #2: accuracy = 0.661277
+I0511 23:49:36.059649 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.967361
+I0511 23:49:36.059692 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.644875
+I0511 23:49:36.059697 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.620543
+I0511 23:49:36.059705 31642 sgd_solver.cpp:106] Iteration 440, lr = 5e-06
+I0511 23:56:46.693423 31642 solver.cpp:229] Iteration 450, loss = 0.106115
+I0511 23:56:46.693645 31642 solver.cpp:245]     Train net output #0: accuracy = 0.92879
+I0511 23:56:46.693656 31642 solver.cpp:245]     Train net output #1: accuracy = 0.742354
+I0511 23:56:46.693660 31642 solver.cpp:245]     Train net output #2: accuracy = 0.674123
+I0511 23:56:46.693665 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.92567
+I0511 23:56:46.693668 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.719412
+I0511 23:56:46.693686 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.655558
+I0511 23:56:46.693691 31642 sgd_solver.cpp:106] Iteration 450, lr = 5e-06
+I0512 00:04:01.932523 31642 solver.cpp:229] Iteration 460, loss = 0.0815428
+I0512 00:04:01.932847 31642 solver.cpp:245]     Train net output #0: accuracy = 0.977713
+I0512 00:04:01.932858 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499977
+I0512 00:04:01.932862 31642 solver.cpp:245]     Train net output #2: accuracy = 0.488857
+I0512 00:04:01.932866 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.977723
+I0512 00:04:01.932870 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499982
+I0512 00:04:01.932874 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.488862
+I0512 00:04:01.932880 31642 sgd_solver.cpp:106] Iteration 460, lr = 5e-06
+I0512 00:11:12.761559 31642 solver.cpp:229] Iteration 470, loss = 0.119399
+I0512 00:11:12.761876 31642 solver.cpp:245]     Train net output #0: accuracy = 0.950164
+I0512 00:11:12.761920 31642 solver.cpp:245]     Train net output #1: accuracy = 0.595786
+I0512 00:11:12.761924 31642 solver.cpp:245]     Train net output #2: accuracy = 0.566088
+I0512 00:11:12.761929 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.949802
+I0512 00:11:12.762022 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.590464
+I0512 00:11:12.762028 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.561202
+I0512 00:11:12.762035 31642 sgd_solver.cpp:106] Iteration 470, lr = 5e-06
+I0512 00:18:24.514211 31642 solver.cpp:229] Iteration 480, loss = 0.0591226
+I0512 00:18:24.522366 31642 solver.cpp:245]     Train net output #0: accuracy = 0.9837
+I0512 00:18:24.522413 31642 solver.cpp:245]     Train net output #1: accuracy = 0.705984
+I0512 00:18:24.522420 31642 solver.cpp:245]     Train net output #2: accuracy = 0.681943
+I0512 00:18:24.522425 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982892
+I0512 00:18:24.522431 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.671926
+I0512 00:18:24.522439 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.655214
+I0512 00:18:24.522447 31642 sgd_solver.cpp:106] Iteration 480, lr = 5e-06
+I0512 00:25:35.553254 31642 solver.cpp:229] Iteration 490, loss = 0.0859281
+I0512 00:25:35.553473 31642 solver.cpp:245]     Train net output #0: accuracy = 0.952351
+I0512 00:25:35.553483 31642 solver.cpp:245]     Train net output #1: accuracy = 0.576725
+I0512 00:25:35.553488 31642 solver.cpp:245]     Train net output #2: accuracy = 0.545229
+I0512 00:25:35.553491 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.952371
+I0512 00:25:35.553495 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.577582
+I0512 00:25:35.553499 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.545918
+I0512 00:25:35.553505 31642 sgd_solver.cpp:106] Iteration 490, lr = 5e-06
+I0512 00:32:47.036437 31642 solver.cpp:229] Iteration 500, loss = 0.081216
+I0512 00:32:47.036751 31642 solver.cpp:245]     Train net output #0: accuracy = 0.949727
+I0512 00:32:47.036762 31642 solver.cpp:245]     Train net output #1: accuracy = 0.683678
+I0512 00:32:47.036767 31642 solver.cpp:245]     Train net output #2: accuracy = 0.63614
+I0512 00:32:47.036770 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.948671
+I0512 00:32:47.036774 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.664519
+I0512 00:32:47.036778 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.621558
+I0512 00:32:47.036784 31642 sgd_solver.cpp:106] Iteration 500, lr = 5e-06
+I0512 00:39:58.879592 31642 solver.cpp:229] Iteration 510, loss = 0.105021
+I0512 00:39:58.879868 31642 solver.cpp:245]     Train net output #0: accuracy = 0.969534
+I0512 00:39:58.879881 31642 solver.cpp:245]     Train net output #1: accuracy = 0.804912
+I0512 00:39:58.879885 31642 solver.cpp:245]     Train net output #2: accuracy = 0.737233
+I0512 00:39:58.879889 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.971697
+I0512 00:39:58.879907 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.796402
+I0512 00:39:58.879925 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.743403
+I0512 00:39:58.879933 31642 sgd_solver.cpp:106] Iteration 510, lr = 5e-06
+I0512 00:47:10.114210 31642 solver.cpp:229] Iteration 520, loss = 0.0900211
+I0512 00:47:10.114418 31642 solver.cpp:245]     Train net output #0: accuracy = 0.995913
+I0512 00:47:10.114428 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499324
+I0512 00:47:10.114432 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497956
+I0512 00:47:10.114436 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.995769
+I0512 00:47:10.114440 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499251
+I0512 00:47:10.114444 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497884
+I0512 00:47:10.114450 31642 sgd_solver.cpp:106] Iteration 520, lr = 5e-06
+I0512 00:54:21.718456 31642 solver.cpp:229] Iteration 530, loss = 0.0721607
+I0512 00:54:21.718729 31642 solver.cpp:245]     Train net output #0: accuracy = 1
+I0512 00:54:21.718741 31642 solver.cpp:245]     Train net output #1: accuracy = 1
+I0512 00:54:21.718745 31642 solver.cpp:245]     Train net output #2: accuracy = 1
+I0512 00:54:21.718750 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 1
+I0512 00:54:21.718752 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 1
+I0512 00:54:21.718770 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 1
+I0512 00:54:21.718776 31642 sgd_solver.cpp:106] Iteration 530, lr = 5e-06
+I0512 01:01:33.242888 31642 solver.cpp:229] Iteration 540, loss = 0.0596684
+I0512 01:01:33.250133 31642 solver.cpp:245]     Train net output #0: accuracy = 0.983259
+I0512 01:01:33.250196 31642 solver.cpp:245]     Train net output #1: accuracy = 0.522252
+I0512 01:01:33.250236 31642 solver.cpp:245]     Train net output #2: accuracy = 0.513848
+I0512 01:01:33.250249 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.983051
+I0512 01:01:33.250260 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.516573
+I0512 01:01:33.250298 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.508074
+I0512 01:01:33.250317 31642 sgd_solver.cpp:106] Iteration 540, lr = 5e-06
+I0512 01:08:48.485471 31642 solver.cpp:229] Iteration 550, loss = 0.0916355
+I0512 01:08:48.485708 31642 solver.cpp:245]     Train net output #0: accuracy = 0.995903
+I0512 01:08:48.485719 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 01:08:48.485723 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497951
+I0512 01:08:48.485728 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.995903
+I0512 01:08:48.485730 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 01:08:48.485735 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497951
+I0512 01:08:48.485741 31642 sgd_solver.cpp:106] Iteration 550, lr = 5e-06
+I0512 01:15:59.929786 31642 solver.cpp:229] Iteration 560, loss = 0.0708219
+I0512 01:15:59.930021 31642 solver.cpp:245]     Train net output #0: accuracy = 0.958835
+I0512 01:15:59.930032 31642 solver.cpp:245]     Train net output #1: accuracy = 0.512771
+I0512 01:15:59.930050 31642 solver.cpp:245]     Train net output #2: accuracy = 0.492364
+I0512 01:15:59.930068 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.959063
+I0512 01:15:59.930099 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.523405
+I0512 01:15:59.930130 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.502824
+I0512 01:15:59.930138 31642 sgd_solver.cpp:106] Iteration 560, lr = 5e-06
+I0512 01:23:10.734844 31642 solver.cpp:229] Iteration 570, loss = 0.051376
+I0512 01:23:10.735206 31642 solver.cpp:245]     Train net output #0: accuracy = 0.982847
+I0512 01:23:10.735234 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5755
+I0512 01:23:10.735245 31642 solver.cpp:245]     Train net output #2: accuracy = 0.563957
+I0512 01:23:10.735255 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982907
+I0512 01:23:10.735263 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.588217
+I0512 01:23:10.735275 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.574536
+I0512 01:23:10.735288 31642 sgd_solver.cpp:106] Iteration 570, lr = 5e-06
+I0512 01:30:21.962366 31642 solver.cpp:229] Iteration 580, loss = 0.10971
+I0512 01:30:21.962585 31642 solver.cpp:245]     Train net output #0: accuracy = 0.961573
+I0512 01:30:21.962597 31642 solver.cpp:245]     Train net output #1: accuracy = 0.567017
+I0512 01:30:21.962602 31642 solver.cpp:245]     Train net output #2: accuracy = 0.546182
+I0512 01:30:21.962620 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.962183
+I0512 01:30:21.962636 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.584582
+I0512 01:30:21.962641 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.562189
+I0512 01:30:21.962674 31642 sgd_solver.cpp:106] Iteration 580, lr = 5e-06
+I0512 01:37:33.240331 31642 solver.cpp:229] Iteration 590, loss = 0.0767369
+I0512 01:37:33.240545 31642 solver.cpp:245]     Train net output #0: accuracy = 0.957391
+I0512 01:37:33.240556 31642 solver.cpp:245]     Train net output #1: accuracy = 0.563584
+I0512 01:37:33.240561 31642 solver.cpp:245]     Train net output #2: accuracy = 0.539452
+I0512 01:37:33.240566 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.957838
+I0512 01:37:33.240569 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.582882
+I0512 01:37:33.240572 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.556122
+I0512 01:37:33.240579 31642 sgd_solver.cpp:106] Iteration 590, lr = 5e-06
+I0512 01:44:44.702821 31642 solver.cpp:229] Iteration 600, loss = 0.0914802
+I0512 01:44:44.709940 31642 solver.cpp:245]     Train net output #0: accuracy = 0.96249
+I0512 01:44:44.709973 31642 solver.cpp:245]     Train net output #1: accuracy = 0.636724
+I0512 01:44:44.709985 31642 solver.cpp:245]     Train net output #2: accuracy = 0.61728
+I0512 01:44:44.709991 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.95942
+I0512 01:44:44.709998 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.609852
+I0512 01:44:44.710005 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.588491
+I0512 01:44:44.710016 31642 sgd_solver.cpp:106] Iteration 600, lr = 5e-06
+I0512 01:51:55.876116 31642 solver.cpp:229] Iteration 610, loss = 0.0628769
+I0512 01:51:55.876427 31642 solver.cpp:245]     Train net output #0: accuracy = 0.994082
+I0512 01:51:55.876440 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 01:51:55.876444 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497041
+I0512 01:51:55.876448 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.994082
+I0512 01:51:55.876451 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 01:51:55.876456 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497041
+I0512 01:51:55.876462 31642 sgd_solver.cpp:106] Iteration 610, lr = 5e-06
+I0512 01:59:07.485433 31642 solver.cpp:229] Iteration 620, loss = 0.0819668
+I0512 01:59:07.485729 31642 solver.cpp:245]     Train net output #0: accuracy = 0.997148
+I0512 01:59:07.485757 31642 solver.cpp:245]     Train net output #1: accuracy = 0.847058
+I0512 01:59:07.485762 31642 solver.cpp:245]     Train net output #2: accuracy = 0.808044
+I0512 01:59:07.485766 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.997123
+I0512 01:59:07.485769 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.838916
+I0512 01:59:07.485792 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.804185
+I0512 01:59:07.485828 31642 sgd_solver.cpp:106] Iteration 620, lr = 5e-06
+I0512 02:06:22.363625 31642 solver.cpp:229] Iteration 630, loss = 0.0801269
+I0512 02:06:22.363834 31642 solver.cpp:245]     Train net output #0: accuracy = 0.923339
+I0512 02:06:22.363844 31642 solver.cpp:245]     Train net output #1: accuracy = 0.672294
+I0512 02:06:22.363848 31642 solver.cpp:245]     Train net output #2: accuracy = 0.617618
+I0512 02:06:22.363852 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.920625
+I0512 02:06:22.363857 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.644242
+I0512 02:06:22.363859 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.594202
+I0512 02:06:22.363867 31642 sgd_solver.cpp:106] Iteration 630, lr = 5e-06
+I0512 02:13:34.159173 31642 solver.cpp:229] Iteration 640, loss = 0.124972
+I0512 02:13:34.159426 31642 solver.cpp:245]     Train net output #0: accuracy = 0.990466
+I0512 02:13:34.159437 31642 solver.cpp:245]     Train net output #1: accuracy = 0.891124
+I0512 02:13:34.159442 31642 solver.cpp:245]     Train net output #2: accuracy = 0.832586
+I0512 02:13:34.159446 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.990109
+I0512 02:13:34.159449 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.878074
+I0512 02:13:34.159453 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.824531
+I0512 02:13:34.159461 31642 sgd_solver.cpp:106] Iteration 640, lr = 5e-06
+I0512 02:20:45.228943 31642 solver.cpp:229] Iteration 650, loss = 0.0561676
+I0512 02:20:45.229238 31642 solver.cpp:245]     Train net output #0: accuracy = 0.988805
+I0512 02:20:45.229248 31642 solver.cpp:245]     Train net output #1: accuracy = 0.892808
+I0512 02:20:45.229251 31642 solver.cpp:245]     Train net output #2: accuracy = 0.781352
+I0512 02:20:45.229255 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.987073
+I0512 02:20:45.229259 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.797086
+I0512 02:20:45.229262 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.727869
+I0512 02:20:45.229269 31642 sgd_solver.cpp:106] Iteration 650, lr = 5e-06
+I0512 02:27:56.754437 31642 solver.cpp:229] Iteration 660, loss = 0.115169
+I0512 02:27:56.761538 31642 solver.cpp:245]     Train net output #0: accuracy = 0.932629
+I0512 02:27:56.761598 31642 solver.cpp:245]     Train net output #1: accuracy = 0.731315
+I0512 02:27:56.761646 31642 solver.cpp:245]     Train net output #2: accuracy = 0.668883
+I0512 02:27:56.761656 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.926474
+I0512 02:27:56.761674 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.690757
+I0512 02:27:56.761682 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.633547
+I0512 02:27:56.761732 31642 sgd_solver.cpp:106] Iteration 660, lr = 5e-06
+I0512 02:35:08.026609 31642 solver.cpp:229] Iteration 670, loss = 0.0797427
+I0512 02:35:08.026923 31642 solver.cpp:245]     Train net output #0: accuracy = 0.985327
+I0512 02:35:08.026932 31642 solver.cpp:245]     Train net output #1: accuracy = 0.813498
+I0512 02:35:08.026937 31642 solver.cpp:245]     Train net output #2: accuracy = 0.767792
+I0512 02:35:08.026940 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.98248
+I0512 02:35:08.026944 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.753256
+I0512 02:35:08.026947 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.717736
+I0512 02:35:08.026954 31642 sgd_solver.cpp:106] Iteration 670, lr = 5e-06
+I0512 02:42:19.732033 31642 solver.cpp:229] Iteration 680, loss = 0.0640696
+I0512 02:42:19.732252 31642 solver.cpp:245]     Train net output #0: accuracy = 0.982381
+I0512 02:42:19.732261 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499965
+I0512 02:42:19.732266 31642 solver.cpp:245]     Train net output #2: accuracy = 0.491191
+I0512 02:42:19.732270 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982441
+I0512 02:42:19.732275 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499995
+I0512 02:42:19.732277 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.49122
+I0512 02:42:19.732285 31642 sgd_solver.cpp:106] Iteration 680, lr = 5e-06
+I0512 02:49:32.384526 31642 solver.cpp:229] Iteration 690, loss = 0.0765733
+I0512 02:49:32.384791 31642 solver.cpp:245]     Train net output #0: accuracy = 0.961979
+I0512 02:49:32.384804 31642 solver.cpp:245]     Train net output #1: accuracy = 0.50013
+I0512 02:49:32.384807 31642 solver.cpp:245]     Train net output #2: accuracy = 0.48112
+I0512 02:49:32.384811 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.961969
+I0512 02:49:32.384815 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 02:49:32.384832 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.480985
+I0512 02:49:32.384852 31642 sgd_solver.cpp:106] Iteration 690, lr = 5e-06
+I0512 02:56:44.041405 31642 solver.cpp:229] Iteration 700, loss = 0.0825057
+I0512 02:56:45.042803 31642 solver.cpp:245]     Train net output #0: accuracy = 1
+I0512 02:56:45.042867 31642 solver.cpp:245]     Train net output #1: accuracy = 1
+I0512 02:56:45.042906 31642 solver.cpp:245]     Train net output #2: accuracy = 1
+I0512 02:56:45.042943 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 1
+I0512 02:56:45.042979 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 1
+I0512 02:56:45.043014 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 1
+I0512 02:56:45.043053 31642 sgd_solver.cpp:106] Iteration 700, lr = 5e-06
+I0512 03:03:59.890552 31642 solver.cpp:229] Iteration 710, loss = 0.092053
+I0512 03:03:59.890805 31642 solver.cpp:245]     Train net output #0: accuracy = 0.96315
+I0512 03:03:59.890826 31642 solver.cpp:245]     Train net output #1: accuracy = 0.579039
+I0512 03:03:59.890841 31642 solver.cpp:245]     Train net output #2: accuracy = 0.556842
+I0512 03:03:59.890854 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.963095
+I0512 03:03:59.890868 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.576499
+I0512 03:03:59.890882 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.554629
+I0512 03:03:59.890947 31642 sgd_solver.cpp:106] Iteration 710, lr = 5e-06
+I0512 03:11:11.181002 31642 solver.cpp:229] Iteration 720, loss = 0.0886308
+I0512 03:11:11.181349 31642 solver.cpp:245]     Train net output #0: accuracy = 0.979559
+I0512 03:11:11.181372 31642 solver.cpp:245]     Train net output #1: accuracy = 0.532936
+I0512 03:11:11.181386 31642 solver.cpp:245]     Train net output #2: accuracy = 0.521363
+I0512 03:11:11.181424 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.979747
+I0512 03:11:11.181440 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.528536
+I0512 03:11:11.181473 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.51762
+I0512 03:11:11.181488 31642 sgd_solver.cpp:106] Iteration 720, lr = 5e-06
+I0512 03:18:22.993131 31642 solver.cpp:229] Iteration 730, loss = 0.0823435
+I0512 03:18:22.993489 31642 solver.cpp:245]     Train net output #0: accuracy = 0.992659
+I0512 03:18:22.993520 31642 solver.cpp:245]     Train net output #1: accuracy = 0.992659
+I0512 03:18:22.993592 31642 solver.cpp:245]     Train net output #2: accuracy = 0.496329
+I0512 03:18:22.993643 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.994067
+I0512 03:18:22.993685 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.994067
+I0512 03:18:22.993718 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497034
+I0512 03:18:22.993737 31642 sgd_solver.cpp:106] Iteration 730, lr = 5e-06
+I0512 03:25:34.180441 31642 solver.cpp:229] Iteration 740, loss = 0.0994035
+I0512 03:25:34.180748 31642 solver.cpp:245]     Train net output #0: accuracy = 0.920968
+I0512 03:25:34.180769 31642 solver.cpp:245]     Train net output #1: accuracy = 0.668898
+I0512 03:25:34.180783 31642 solver.cpp:245]     Train net output #2: accuracy = 0.616945
+I0512 03:25:34.180816 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.912853
+I0512 03:25:34.180843 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.607341
+I0512 03:25:34.180856 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.56002
+I0512 03:25:34.180871 31642 sgd_solver.cpp:106] Iteration 740, lr = 5e-06
+I0512 03:32:46.292881 31642 solver.cpp:229] Iteration 750, loss = 0.0558886
+I0512 03:32:46.293146 31642 solver.cpp:245]     Train net output #0: accuracy = 0.989201
+I0512 03:32:46.293174 31642 solver.cpp:245]     Train net output #1: accuracy = 0.531135
+I0512 03:32:46.293195 31642 solver.cpp:245]     Train net output #2: accuracy = 0.523793
+I0512 03:32:46.293210 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989082
+I0512 03:32:46.293228 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.521127
+I0512 03:32:46.293251 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.5146
+I0512 03:32:46.293372 31642 sgd_solver.cpp:106] Iteration 750, lr = 5e-06
+I0512 03:39:57.624910 31642 solver.cpp:229] Iteration 760, loss = 0.0710222
+I0512 03:39:57.625293 31642 solver.cpp:245]     Train net output #0: accuracy = 0.95189
+I0512 03:39:57.625331 31642 solver.cpp:245]     Train net output #1: accuracy = 0.558405
+I0512 03:39:57.625345 31642 solver.cpp:245]     Train net output #2: accuracy = 0.532676
+I0512 03:39:57.625378 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.951617
+I0512 03:39:57.625406 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.554491
+I0512 03:39:57.625419 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.528893
+I0512 03:39:57.625435 31642 sgd_solver.cpp:106] Iteration 760, lr = 5e-06
+I0512 03:47:09.030006 31642 solver.cpp:229] Iteration 770, loss = 0.0586763
+I0512 03:47:09.030278 31642 solver.cpp:245]     Train net output #0: accuracy = 0.959385
+I0512 03:47:09.030299 31642 solver.cpp:245]     Train net output #1: accuracy = 0.615503
+I0512 03:47:09.030331 31642 solver.cpp:245]     Train net output #2: accuracy = 0.582233
+I0512 03:47:09.030345 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.959435
+I0512 03:47:09.030359 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.616173
+I0512 03:47:09.030390 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.582819
+I0512 03:47:09.030480 31642 sgd_solver.cpp:106] Iteration 770, lr = 5e-06
+I0512 03:54:20.696300 31642 solver.cpp:229] Iteration 780, loss = 0.0788134
+I0512 03:54:20.696708 31642 solver.cpp:245]     Train net output #0: accuracy = 0.976096
+I0512 03:54:20.696732 31642 solver.cpp:245]     Train net output #1: accuracy = 0.738306
+I0512 03:54:20.696806 31642 solver.cpp:245]     Train net output #2: accuracy = 0.662592
+I0512 03:54:20.696825 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.976736
+I0512 03:54:20.696838 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.734421
+I0512 03:54:20.696853 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.663966
+I0512 03:54:20.696887 31642 sgd_solver.cpp:106] Iteration 780, lr = 5e-06
+I0512 04:01:32.432109 31642 solver.cpp:229] Iteration 790, loss = 0.0476728
+I0512 04:01:32.432371 31642 solver.cpp:245]     Train net output #0: accuracy = 0.991052
+I0512 04:01:32.432394 31642 solver.cpp:245]     Train net output #1: accuracy = 0.927748
+I0512 04:01:32.432407 31642 solver.cpp:245]     Train net output #2: accuracy = 0.860828
+I0512 04:01:32.432421 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989866
+I0512 04:01:32.432435 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.91912
+I0512 04:01:32.432449 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.84562
+I0512 04:01:32.432466 31642 sgd_solver.cpp:106] Iteration 790, lr = 5e-06
+I0512 04:08:46.736268 31642 solver.cpp:229] Iteration 800, loss = 0.089919
+I0512 04:08:46.736589 31642 solver.cpp:245]     Train net output #0: accuracy = 0.956131
+I0512 04:08:46.736610 31642 solver.cpp:245]     Train net output #1: accuracy = 0.55383
+I0512 04:08:46.736644 31642 solver.cpp:245]     Train net output #2: accuracy = 0.531013
+I0512 04:08:46.736656 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.957317
+I0512 04:08:46.736670 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.573685
+I0512 04:08:46.736685 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.550182
+I0512 04:08:46.736737 31642 sgd_solver.cpp:106] Iteration 800, lr = 5e-06
+I0512 04:15:58.815340 31642 solver.cpp:229] Iteration 810, loss = 0.108319
+I0512 04:15:58.815752 31642 solver.cpp:245]     Train net output #0: accuracy = 0.949117
+I0512 04:15:58.815789 31642 solver.cpp:245]     Train net output #1: accuracy = 0.519783
+I0512 04:15:58.815840 31642 solver.cpp:245]     Train net output #2: accuracy = 0.494441
+I0512 04:15:58.815855 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.948681
+I0512 04:15:58.815868 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.519372
+I0512 04:15:58.815883 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.493882
+I0512 04:15:58.815899 31642 sgd_solver.cpp:106] Iteration 810, lr = 5e-06
+I0512 04:23:11.436116 31642 solver.cpp:229] Iteration 820, loss = 0.0710305
+I0512 04:23:11.436391 31642 solver.cpp:245]     Train net output #0: accuracy = 0.991806
+I0512 04:23:11.436427 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499965
+I0512 04:23:11.436441 31642 solver.cpp:245]     Train net output #2: accuracy = 0.495903
+I0512 04:23:11.436455 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.991523
+I0512 04:23:11.436467 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499822
+I0512 04:23:11.436482 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.495761
+I0512 04:23:11.436498 31642 sgd_solver.cpp:106] Iteration 820, lr = 5e-06
+I0512 04:30:23.837018 31642 solver.cpp:229] Iteration 830, loss = 0.078142
+I0512 04:30:23.844039 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993497
+I0512 04:30:23.844107 31642 solver.cpp:245]     Train net output #1: accuracy = 0.836279
+I0512 04:30:23.844142 31642 solver.cpp:245]     Train net output #2: accuracy = 0.829912
+I0512 04:30:23.844168 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993284
+I0512 04:30:23.844240 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.827609
+I0512 04:30:23.844269 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.823231
+I0512 04:30:23.844298 31642 sgd_solver.cpp:106] Iteration 830, lr = 5e-06
+I0512 04:37:35.205030 31642 solver.cpp:229] Iteration 840, loss = 0.0712628
+I0512 04:37:35.205253 31642 solver.cpp:245]     Train net output #0: accuracy = 0.992535
+I0512 04:37:35.205272 31642 solver.cpp:245]     Train net output #1: accuracy = 0.967413
+I0512 04:37:35.205286 31642 solver.cpp:245]     Train net output #2: accuracy = 0.933587
+I0512 04:37:35.205298 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989573
+I0512 04:37:35.205330 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.933814
+I0512 04:37:35.205358 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.906038
+I0512 04:37:35.205374 31642 sgd_solver.cpp:106] Iteration 840, lr = 5e-06
+I0512 04:44:47.171427 31642 solver.cpp:229] Iteration 850, loss = 0.0516933
+I0512 04:44:47.171802 31642 solver.cpp:245]     Train net output #0: accuracy = 0.995997
+I0512 04:44:47.171842 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 04:44:47.171856 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497999
+I0512 04:44:47.171870 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.995962
+I0512 04:44:47.171885 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499983
+I0512 04:44:47.171897 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497981
+I0512 04:44:47.171913 31642 sgd_solver.cpp:106] Iteration 850, lr = 5e-06
+I0512 04:51:58.425817 31642 solver.cpp:229] Iteration 860, loss = 0.0586639
+I0512 04:51:58.426122 31642 solver.cpp:245]     Train net output #0: accuracy = 0.976444
+I0512 04:51:58.426146 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499975
+I0512 04:51:58.426158 31642 solver.cpp:245]     Train net output #2: accuracy = 0.488222
+I0512 04:51:58.426172 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.976384
+I0512 04:51:58.426187 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499944
+I0512 04:51:58.426199 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.488192
+I0512 04:51:58.426215 31642 sgd_solver.cpp:106] Iteration 860, lr = 5e-06
+I0512 04:59:10.825825 31642 solver.cpp:229] Iteration 870, loss = 0.0498173
+I0512 04:59:10.826108 31642 solver.cpp:245]     Train net output #0: accuracy = 0.981617
+I0512 04:59:10.826150 31642 solver.cpp:245]     Train net output #1: accuracy = 0.549954
+I0512 04:59:10.826164 31642 solver.cpp:245]     Train net output #2: accuracy = 0.537069
+I0512 04:59:10.826179 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.981692
+I0512 04:59:10.826191 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.586319
+I0512 04:59:10.826205 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.565977
+I0512 04:59:10.826221 31642 sgd_solver.cpp:106] Iteration 870, lr = 5e-06
+I0512 05:06:25.631399 31642 solver.cpp:229] Iteration 880, loss = 0.0553968
+I0512 05:06:25.631783 31642 solver.cpp:245]     Train net output #0: accuracy = 0.975595
+I0512 05:06:25.631805 31642 solver.cpp:245]     Train net output #1: accuracy = 0.513843
+I0512 05:06:25.631820 31642 solver.cpp:245]     Train net output #2: accuracy = 0.501623
+I0512 05:06:25.631834 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.975635
+I0512 05:06:25.631848 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.525715
+I0512 05:06:25.631862 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.513121
+I0512 05:06:25.631878 31642 sgd_solver.cpp:106] Iteration 880, lr = 5e-06
+I0512 05:13:36.723531 31642 solver.cpp:229] Iteration 890, loss = 0.108014
+I0512 05:13:36.730252 31642 solver.cpp:245]     Train net output #0: accuracy = 0.928701
+I0512 05:13:36.730334 31642 solver.cpp:245]     Train net output #1: accuracy = 0.654739
+I0512 05:13:36.730355 31642 solver.cpp:245]     Train net output #2: accuracy = 0.60201
+I0512 05:13:36.730373 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.925774
+I0512 05:13:36.730391 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.647007
+I0512 05:13:36.730442 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.592424
+I0512 05:13:36.730468 31642 sgd_solver.cpp:106] Iteration 890, lr = 5e-06
+I0512 05:20:48.650128 31642 solver.cpp:229] Iteration 900, loss = 0.0774823
+I0512 05:20:48.650521 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993487
+I0512 05:20:48.650547 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 05:20:48.650560 31642 solver.cpp:245]     Train net output #2: accuracy = 0.496744
+I0512 05:20:48.650575 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993487
+I0512 05:20:48.650589 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 05:20:48.650607 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.496744
+I0512 05:20:48.650637 31642 sgd_solver.cpp:106] Iteration 900, lr = 5e-06
+I0512 05:27:59.694097 31642 solver.cpp:229] Iteration 910, loss = 0.0945968
+I0512 05:27:59.694361 31642 solver.cpp:245]     Train net output #0: accuracy = 0.952054
+I0512 05:27:59.694383 31642 solver.cpp:245]     Train net output #1: accuracy = 0.547387
+I0512 05:27:59.694397 31642 solver.cpp:245]     Train net output #2: accuracy = 0.504491
+I0512 05:27:59.694412 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.955779
+I0512 05:27:59.694425 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.537535
+I0512 05:27:59.694438 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.502878
+I0512 05:27:59.694454 31642 sgd_solver.cpp:106] Iteration 910, lr = 5e-06
+I0512 05:35:11.443231 31642 solver.cpp:229] Iteration 920, loss = 0.158921
+I0512 05:35:11.443578 31642 solver.cpp:245]     Train net output #0: accuracy = 0.995546
+I0512 05:35:11.443599 31642 solver.cpp:245]     Train net output #1: accuracy = 0.995546
+I0512 05:35:11.443612 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497773
+I0512 05:35:11.443627 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.995303
+I0512 05:35:11.443640 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.995303
+I0512 05:35:11.443653 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.497651
+I0512 05:35:11.443670 31642 sgd_solver.cpp:106] Iteration 920, lr = 5e-06
+I0512 05:42:22.575475 31642 solver.cpp:229] Iteration 930, loss = 0.0919247
+I0512 05:42:22.575765 31642 solver.cpp:245]     Train net output #0: accuracy = 0.921915
+I0512 05:42:22.575806 31642 solver.cpp:245]     Train net output #1: accuracy = 0.712922
+I0512 05:42:22.575820 31642 solver.cpp:245]     Train net output #2: accuracy = 0.651135
+I0512 05:42:22.575834 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.921429
+I0512 05:42:22.575847 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.682245
+I0512 05:42:22.575860 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.630915
+I0512 05:42:22.575876 31642 sgd_solver.cpp:106] Iteration 930, lr = 5e-06
+I0512 05:49:34.252017 31642 solver.cpp:229] Iteration 940, loss = 0.0810593
+I0512 05:49:34.252369 31642 solver.cpp:245]     Train net output #0: accuracy = 0.987763
+I0512 05:49:34.252391 31642 solver.cpp:245]     Train net output #1: accuracy = 0.771733
+I0512 05:49:34.252405 31642 solver.cpp:245]     Train net output #2: accuracy = 0.702082
+I0512 05:49:34.252418 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.987292
+I0512 05:49:34.252432 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.724908
+I0512 05:49:34.252446 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.674864
+I0512 05:49:34.252461 31642 sgd_solver.cpp:106] Iteration 940, lr = 5e-06
+I0512 05:56:45.559382 31642 solver.cpp:229] Iteration 950, loss = 0.104622
+I0512 05:56:45.559860 31642 solver.cpp:245]     Train net output #0: accuracy = 0.987153
+I0512 05:56:45.559880 31642 solver.cpp:245]     Train net output #1: accuracy = 0.687969
+I0512 05:56:45.559913 31642 solver.cpp:245]     Train net output #2: accuracy = 0.526736
+I0512 05:56:45.559921 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989137
+I0512 05:56:45.559929 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.503088
+I0512 05:56:45.559937 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.496161
+I0512 05:56:45.559952 31642 sgd_solver.cpp:106] Iteration 950, lr = 5e-06
+I0512 06:03:58.267037 31642 solver.cpp:229] Iteration 960, loss = 0.099419
+I0512 06:03:58.267307 31642 solver.cpp:245]     Train net output #0: accuracy = 0.98372
+I0512 06:03:58.267335 31642 solver.cpp:245]     Train net output #1: accuracy = 0.736303
+I0512 06:03:58.267344 31642 solver.cpp:245]     Train net output #2: accuracy = 0.688782
+I0512 06:03:58.267352 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982961
+I0512 06:03:58.267359 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.689454
+I0512 06:03:58.267392 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.657524
+I0512 06:03:58.267408 31642 sgd_solver.cpp:106] Iteration 960, lr = 5e-06
+I0512 06:11:12.375152 31642 solver.cpp:229] Iteration 970, loss = 0.0903925
+I0512 06:11:12.375453 31642 solver.cpp:245]     Train net output #0: accuracy = 0.995005
+I0512 06:11:12.375468 31642 solver.cpp:245]     Train net output #1: accuracy = 0.978399
+I0512 06:11:12.375476 31642 solver.cpp:245]     Train net output #2: accuracy = 0.901526
+I0512 06:11:12.375484 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.994767
+I0512 06:11:12.375491 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.968311
+I0512 06:11:12.375499 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.896022
+I0512 06:11:12.375509 31642 sgd_solver.cpp:106] Iteration 970, lr = 5e-06
+I0512 06:18:23.794371 31642 solver.cpp:229] Iteration 980, loss = 0.0674761
+I0512 06:18:23.794620 31642 solver.cpp:245]     Train net output #0: accuracy = 0.978527
+I0512 06:18:23.794629 31642 solver.cpp:245]     Train net output #1: accuracy = 0.625006
+I0512 06:18:23.794633 31642 solver.cpp:245]     Train net output #2: accuracy = 0.603641
+I0512 06:18:23.794638 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.97753
+I0512 06:18:23.794642 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.604667
+I0512 06:18:23.794663 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.584817
+I0512 06:18:23.794669 31642 sgd_solver.cpp:106] Iteration 980, lr = 5e-06
+I0512 06:25:34.468106 31642 solver.cpp:229] Iteration 990, loss = 0.118793
+I0512 06:25:34.468333 31642 solver.cpp:245]     Train net output #0: accuracy = 0.963959
+I0512 06:25:34.468344 31642 solver.cpp:245]     Train net output #1: accuracy = 0.667284
+I0512 06:25:34.468385 31642 solver.cpp:245]     Train net output #2: accuracy = 0.586227
+I0512 06:25:34.468392 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.964588
+I0512 06:25:34.468396 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.652454
+I0512 06:25:34.468441 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.58053
+I0512 06:25:34.468448 31642 sgd_solver.cpp:106] Iteration 990, lr = 5e-06
+I0512 06:32:45.768066 31642 solver.cpp:229] Iteration 1000, loss = 0.115507
+I0512 06:32:45.768330 31642 solver.cpp:245]     Train net output #0: accuracy = 0.97314
+I0512 06:32:45.768340 31642 solver.cpp:245]     Train net output #1: accuracy = 0.501272
+I0512 06:32:45.768344 31642 solver.cpp:245]     Train net output #2: accuracy = 0.488592
+I0512 06:32:45.768348 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.972902
+I0512 06:32:45.768352 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499618
+I0512 06:32:45.768355 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.486999
+I0512 06:32:45.768362 31642 sgd_solver.cpp:106] Iteration 1000, lr = 5e-06
+I0512 06:39:56.694700 31642 solver.cpp:229] Iteration 1010, loss = 0.108774
+I0512 06:39:56.695032 31642 solver.cpp:245]     Train net output #0: accuracy = 0.990893
+I0512 06:39:56.695071 31642 solver.cpp:245]     Train net output #1: accuracy = 0.504587
+I0512 06:39:56.695076 31642 solver.cpp:245]     Train net output #2: accuracy = 0.500033
+I0512 06:39:56.695082 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.990809
+I0512 06:39:56.695099 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 06:39:56.695103 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.495404
+I0512 06:39:56.695124 31642 sgd_solver.cpp:106] Iteration 1010, lr = 5e-06
+I0512 06:47:08.107059 31642 solver.cpp:229] Iteration 1020, loss = 0.0789216
+I0512 06:47:08.107270 31642 solver.cpp:245]     Train net output #0: accuracy = 0.982783
+I0512 06:47:08.107280 31642 solver.cpp:245]     Train net output #1: accuracy = 0.790106
+I0512 06:47:08.107283 31642 solver.cpp:245]     Train net output #2: accuracy = 0.749349
+I0512 06:47:08.107287 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.981905
+I0512 06:47:08.107291 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.754994
+I0512 06:47:08.107295 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.72638
+I0512 06:47:08.107301 31642 sgd_solver.cpp:106] Iteration 1020, lr = 5e-06
+I0512 06:54:18.943192 31642 solver.cpp:229] Iteration 1030, loss = 0.085438
+I0512 06:54:18.943459 31642 solver.cpp:245]     Train net output #0: accuracy = 0.955
+I0512 06:54:18.943487 31642 solver.cpp:245]     Train net output #1: accuracy = 0.740857
+I0512 06:54:18.943491 31642 solver.cpp:245]     Train net output #2: accuracy = 0.681578
+I0512 06:54:18.943496 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.953924
+I0512 06:54:18.943500 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.719669
+I0512 06:54:18.943538 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.667108
+I0512 06:54:18.943547 31642 sgd_solver.cpp:106] Iteration 1030, lr = 5e-06
+I0512 07:01:30.446660 31642 solver.cpp:229] Iteration 1040, loss = 0.0932629
+I0512 07:01:30.446938 31642 solver.cpp:245]     Train net output #0: accuracy = 0.999643
+I0512 07:01:30.446949 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 07:01:30.446954 31642 solver.cpp:245]     Train net output #2: accuracy = 0.499821
+I0512 07:01:30.446957 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.999643
+I0512 07:01:30.446961 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 07:01:30.446985 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.499821
+I0512 07:01:30.446991 31642 sgd_solver.cpp:106] Iteration 1040, lr = 5e-06
+I0512 07:08:45.750334 31642 solver.cpp:229] Iteration 1050, loss = 0.092088
+I0512 07:08:45.750540 31642 solver.cpp:245]     Train net output #0: accuracy = 0.938309
+I0512 07:08:45.750550 31642 solver.cpp:245]     Train net output #1: accuracy = 0.790217
+I0512 07:08:45.750555 31642 solver.cpp:245]     Train net output #2: accuracy = 0.730008
+I0512 07:08:45.750558 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.929916
+I0512 07:08:45.750562 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.748088
+I0512 07:08:45.750566 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.690643
+I0512 07:08:45.750572 31642 sgd_solver.cpp:106] Iteration 1050, lr = 5e-06
+I0512 07:15:56.803643 31642 solver.cpp:229] Iteration 1060, loss = 0.0847104
+I0512 07:15:56.803895 31642 solver.cpp:245]     Train net output #0: accuracy = 0.909321
+I0512 07:15:56.803907 31642 solver.cpp:245]     Train net output #1: accuracy = 0.870198
+I0512 07:15:56.803911 31642 solver.cpp:245]     Train net output #2: accuracy = 0.771472
+I0512 07:15:56.803915 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.909247
+I0512 07:15:56.803920 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.852383
+I0512 07:15:56.803923 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.764848
+I0512 07:15:56.803930 31642 sgd_solver.cpp:106] Iteration 1060, lr = 5e-06
+I0512 07:23:07.943830 31642 solver.cpp:229] Iteration 1070, loss = 0.0867156
+I0512 07:23:07.944177 31642 solver.cpp:245]     Train net output #0: accuracy = 0.973125
+I0512 07:23:07.944188 31642 solver.cpp:245]     Train net output #1: accuracy = 0.602681
+I0512 07:23:07.944193 31642 solver.cpp:245]     Train net output #2: accuracy = 0.581545
+I0512 07:23:07.944196 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.972837
+I0512 07:23:07.944201 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.61126
+I0512 07:23:07.944205 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.587083
+I0512 07:23:07.944226 31642 sgd_solver.cpp:106] Iteration 1070, lr = 5e-06
+I0512 07:30:18.859099 31642 solver.cpp:229] Iteration 1080, loss = 0.125493
+I0512 07:30:18.859300 31642 solver.cpp:245]     Train net output #0: accuracy = 0.964946
+I0512 07:30:18.859310 31642 solver.cpp:245]     Train net output #1: accuracy = 0.528211
+I0512 07:30:18.859314 31642 solver.cpp:245]     Train net output #2: accuracy = 0.507762
+I0512 07:30:18.859318 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.965665
+I0512 07:30:18.859361 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.560117
+I0512 07:30:18.859378 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.531999
+I0512 07:30:18.859386 31642 sgd_solver.cpp:106] Iteration 1080, lr = 5e-06
+I0512 07:37:30.029757 31642 solver.cpp:229] Iteration 1090, loss = 0.051732
+I0512 07:37:30.029989 31642 solver.cpp:245]     Train net output #0: accuracy = 0.986458
+I0512 07:37:30.030014 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 07:37:30.030037 31642 solver.cpp:245]     Train net output #2: accuracy = 0.493229
+I0512 07:37:30.030041 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.986821
+I0512 07:37:30.030092 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.514273
+I0512 07:37:30.030095 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.507667
+I0512 07:37:30.030150 31642 sgd_solver.cpp:106] Iteration 1090, lr = 5e-06
+I0512 07:44:40.994679 31642 solver.cpp:229] Iteration 1100, loss = 0.0444919
+I0512 07:44:40.994930 31642 solver.cpp:245]     Train net output #0: accuracy = 0.991176
+I0512 07:44:40.994941 31642 solver.cpp:245]     Train net output #1: accuracy = 0.500289
+I0512 07:44:40.994946 31642 solver.cpp:245]     Train net output #2: accuracy = 0.496149
+I0512 07:44:40.994949 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989628
+I0512 07:44:40.994953 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.49891
+I0512 07:44:40.994956 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.494814
+I0512 07:44:40.994963 31642 sgd_solver.cpp:106] Iteration 1100, lr = 5e-06
+I0512 07:51:51.505681 31642 solver.cpp:229] Iteration 1110, loss = 0.097936
+I0512 07:51:51.505918 31642 solver.cpp:245]     Train net output #0: accuracy = 0.979082
+I0512 07:51:51.505928 31642 solver.cpp:245]     Train net output #1: accuracy = 0.763502
+I0512 07:51:51.505931 31642 solver.cpp:245]     Train net output #2: accuracy = 0.713379
+I0512 07:51:51.505935 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.978343
+I0512 07:51:51.505939 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.743082
+I0512 07:51:51.505957 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.698823
+I0512 07:51:51.505978 31642 sgd_solver.cpp:106] Iteration 1110, lr = 5e-06
+I0512 07:59:03.023380 31642 solver.cpp:229] Iteration 1120, loss = 0.0694886
+I0512 07:59:03.023653 31642 solver.cpp:245]     Train net output #0: accuracy = 0.991682
+I0512 07:59:03.023663 31642 solver.cpp:245]     Train net output #1: accuracy = 0.653497
+I0512 07:59:03.023669 31642 solver.cpp:245]     Train net output #2: accuracy = 0.632684
+I0512 07:59:03.023671 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.990933
+I0512 07:59:03.023675 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.703571
+I0512 07:59:03.023679 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.652997
+I0512 07:59:03.023686 31642 sgd_solver.cpp:106] Iteration 1120, lr = 5e-06
+I0512 08:06:17.914742 31642 solver.cpp:229] Iteration 1130, loss = 0.0673956
+I0512 08:06:17.922842 31642 solver.cpp:245]     Train net output #0: accuracy = 0.990397
+I0512 08:06:17.923020 31642 solver.cpp:245]     Train net output #1: accuracy = 0.894417
+I0512 08:06:17.923161 31642 solver.cpp:245]     Train net output #2: accuracy = 0.834568
+I0512 08:06:17.923207 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989345
+I0512 08:06:17.923219 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.902745
+I0512 08:06:17.923229 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.825052
+I0512 08:06:17.923393 31642 sgd_solver.cpp:106] Iteration 1130, lr = 5e-06
+I0512 08:13:28.748598 31642 solver.cpp:229] Iteration 1140, loss = 0.138649
+I0512 08:13:28.748888 31642 solver.cpp:245]     Train net output #0: accuracy = 0.986265
+I0512 08:13:28.748898 31642 solver.cpp:245]     Train net output #1: accuracy = 0.511161
+I0512 08:13:28.748903 31642 solver.cpp:245]     Train net output #2: accuracy = 0.504081
+I0512 08:13:28.748906 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.986265
+I0512 08:13:28.748910 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5172
+I0512 08:13:28.748914 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.509714
+I0512 08:13:28.748921 31642 sgd_solver.cpp:106] Iteration 1140, lr = 5e-06
+I0512 08:20:39.709439 31642 solver.cpp:229] Iteration 1150, loss = 0.0608862
+I0512 08:20:39.709744 31642 solver.cpp:245]     Train net output #0: accuracy = 0.974385
+I0512 08:20:39.709758 31642 solver.cpp:245]     Train net output #1: accuracy = 0.574818
+I0512 08:20:39.709777 31642 solver.cpp:245]     Train net output #2: accuracy = 0.558305
+I0512 08:20:39.709800 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.973408
+I0512 08:20:39.709805 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.582384
+I0512 08:20:39.709808 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.561974
+I0512 08:20:39.709868 31642 sgd_solver.cpp:106] Iteration 1150, lr = 5e-06
+I0512 08:27:50.840987 31642 solver.cpp:229] Iteration 1160, loss = 0.0840505
+I0512 08:27:50.841208 31642 solver.cpp:245]     Train net output #0: accuracy = 0.957004
+I0512 08:27:50.841220 31642 solver.cpp:245]     Train net output #1: accuracy = 0.764697
+I0512 08:27:50.841238 31642 solver.cpp:245]     Train net output #2: accuracy = 0.703651
+I0512 08:27:50.841256 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.95566
+I0512 08:27:50.841261 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.752834
+I0512 08:27:50.841291 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.693635
+I0512 08:27:50.841300 31642 sgd_solver.cpp:106] Iteration 1160, lr = 5e-06
+I0512 08:35:02.011060 31642 solver.cpp:229] Iteration 1170, loss = 0.0765055
+I0512 08:35:02.011355 31642 solver.cpp:245]     Train net output #0: accuracy = 0.974092
+I0512 08:35:02.011365 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 08:35:02.011370 31642 solver.cpp:245]     Train net output #2: accuracy = 0.487046
+I0512 08:35:02.011374 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.974092
+I0512 08:35:02.011379 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 08:35:02.011382 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.487046
+I0512 08:35:02.011405 31642 sgd_solver.cpp:106] Iteration 1170, lr = 5e-06
+I0512 08:42:12.254617 31642 solver.cpp:229] Iteration 1180, loss = 0.077706
+I0512 08:42:12.254828 31642 solver.cpp:245]     Train net output #0: accuracy = 0.989385
+I0512 08:42:12.254838 31642 solver.cpp:245]     Train net output #1: accuracy = 0.554831
+I0512 08:42:12.254842 31642 solver.cpp:245]     Train net output #2: accuracy = 0.5468
+I0512 08:42:12.254847 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.989152
+I0512 08:42:12.254850 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.575301
+I0512 08:42:12.254853 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.562353
+I0512 08:42:12.254861 31642 sgd_solver.cpp:106] Iteration 1180, lr = 5e-06
+I0512 08:49:23.583896 31642 solver.cpp:229] Iteration 1190, loss = 0.0891115
+I0512 08:49:23.584177 31642 solver.cpp:245]     Train net output #0: accuracy = 0.945357
+I0512 08:49:23.584190 31642 solver.cpp:245]     Train net output #1: accuracy = 0.792582
+I0512 08:49:23.584197 31642 solver.cpp:245]     Train net output #2: accuracy = 0.702427
+I0512 08:49:23.584203 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.942118
+I0512 08:49:23.584213 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.753685
+I0512 08:49:23.584218 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.676388
+I0512 08:49:23.584226 31642 sgd_solver.cpp:106] Iteration 1190, lr = 5e-06
+I0512 08:56:34.648566 31642 solver.cpp:229] Iteration 1200, loss = 0.0533175
+I0512 08:56:34.648869 31642 solver.cpp:245]     Train net output #0: accuracy = 0.997212
+I0512 08:56:34.648880 31642 solver.cpp:245]     Train net output #1: accuracy = 0.997212
+I0512 08:56:34.648885 31642 solver.cpp:245]     Train net output #2: accuracy = 0.498606
+I0512 08:56:34.648906 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.99818
+I0512 08:56:34.648910 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.99818
+I0512 08:56:34.648913 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.49909
+I0512 08:56:34.648921 31642 sgd_solver.cpp:106] Iteration 1200, lr = 5e-06
+I0512 09:03:46.848309 31642 solver.cpp:229] Iteration 1210, loss = 0.0713393
+I0512 09:03:46.848559 31642 solver.cpp:245]     Train net output #0: accuracy = 0.97132
+I0512 09:03:46.848570 31642 solver.cpp:245]     Train net output #1: accuracy = 0.856304
+I0512 09:03:46.848574 31642 solver.cpp:245]     Train net output #2: accuracy = 0.757904
+I0512 09:03:46.848579 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.969941
+I0512 09:03:46.848603 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.844993
+I0512 09:03:46.848606 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.747511
+I0512 09:03:46.848613 31642 sgd_solver.cpp:106] Iteration 1210, lr = 5e-06
+I0512 09:11:01.611109 31642 solver.cpp:229] Iteration 1220, loss = 0.0588901
+I0512 09:11:01.611316 31642 solver.cpp:245]     Train net output #0: accuracy = 0.967922
+I0512 09:11:01.611325 31642 solver.cpp:245]     Train net output #1: accuracy = 0.807495
+I0512 09:11:01.611330 31642 solver.cpp:245]     Train net output #2: accuracy = 0.773223
+I0512 09:11:01.611335 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.965943
+I0512 09:11:01.611338 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.805404
+I0512 09:11:01.611341 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.764424
+I0512 09:11:01.611348 31642 sgd_solver.cpp:106] Iteration 1220, lr = 5e-06
+I0512 09:18:12.876380 31642 solver.cpp:229] Iteration 1230, loss = 0.0925629
+I0512 09:18:12.876688 31642 solver.cpp:245]     Train net output #0: accuracy = 0.988641
+I0512 09:18:12.876734 31642 solver.cpp:245]     Train net output #1: accuracy = 0.905976
+I0512 09:18:12.876739 31642 solver.cpp:245]     Train net output #2: accuracy = 0.884197
+I0512 09:18:12.876742 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.98558
+I0512 09:18:12.876746 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.865823
+I0512 09:18:12.876770 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.850367
+I0512 09:18:12.876806 31642 sgd_solver.cpp:106] Iteration 1230, lr = 5e-06
+I0512 09:25:24.105448 31642 solver.cpp:229] Iteration 1240, loss = 0.0576331
+I0512 09:25:24.105741 31642 solver.cpp:245]     Train net output #0: accuracy = 0.988075
+I0512 09:25:24.105752 31642 solver.cpp:245]     Train net output #1: accuracy = 0.659835
+I0512 09:25:24.105757 31642 solver.cpp:245]     Train net output #2: accuracy = 0.640894
+I0512 09:25:24.105762 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.984821
+I0512 09:25:24.105778 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.642219
+I0512 09:25:24.105796 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.605916
+I0512 09:25:24.105844 31642 sgd_solver.cpp:106] Iteration 1240, lr = 5e-06
+I0512 09:32:35.464751 31642 solver.cpp:229] Iteration 1250, loss = 0.0871041
+I0512 09:32:35.467788 31642 solver.cpp:245]     Train net output #0: accuracy = 0.981012
+I0512 09:32:35.467823 31642 solver.cpp:245]     Train net output #1: accuracy = 0.774494
+I0512 09:32:35.467862 31642 solver.cpp:245]     Train net output #2: accuracy = 0.726886
+I0512 09:32:35.467874 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.980065
+I0512 09:32:35.467881 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.774474
+I0512 09:32:35.467901 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.720561
+I0512 09:32:35.467911 31642 sgd_solver.cpp:106] Iteration 1250, lr = 5e-06
+I0512 09:39:46.330058 31642 solver.cpp:229] Iteration 1260, loss = 0.0572034
+I0512 09:39:46.330410 31642 solver.cpp:245]     Train net output #0: accuracy = 0.957733
+I0512 09:39:46.330495 31642 solver.cpp:245]     Train net output #1: accuracy = 0.62306
+I0512 09:39:46.330502 31642 solver.cpp:245]     Train net output #2: accuracy = 0.598146
+I0512 09:39:46.330513 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.956796
+I0512 09:39:46.330530 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.622871
+I0512 09:39:46.330535 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.595921
+I0512 09:39:46.330556 31642 sgd_solver.cpp:106] Iteration 1260, lr = 5e-06
+I0512 09:46:57.005856 31642 solver.cpp:229] Iteration 1270, loss = 0.110965
+I0512 09:46:57.006157 31642 solver.cpp:245]     Train net output #0: accuracy = 0.997768
+I0512 09:46:57.006170 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 09:46:57.006175 31642 solver.cpp:245]     Train net output #2: accuracy = 0.498884
+I0512 09:46:57.006178 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.997768
+I0512 09:46:57.006182 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 09:46:57.006186 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.498884
+I0512 09:46:57.006206 31642 sgd_solver.cpp:106] Iteration 1270, lr = 5e-06
+I0512 09:54:08.240561 31642 solver.cpp:229] Iteration 1280, loss = 0.099295
+I0512 09:54:08.241022 31642 solver.cpp:245]     Train net output #0: accuracy = 0.976573
+I0512 09:54:08.241046 31642 solver.cpp:245]     Train net output #1: accuracy = 0.784201
+I0512 09:54:08.241072 31642 solver.cpp:245]     Train net output #2: accuracy = 0.715331
+I0512 09:54:08.241081 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.972837
+I0512 09:54:08.241103 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.702073
+I0512 09:54:08.241109 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.655551
+I0512 09:54:08.241118 31642 sgd_solver.cpp:106] Iteration 1280, lr = 5e-06
+I0512 10:01:19.199033 31642 solver.cpp:229] Iteration 1290, loss = 0.105257
+I0512 10:01:19.199230 31642 solver.cpp:245]     Train net output #0: accuracy = 0.962788
+I0512 10:01:19.199239 31642 solver.cpp:245]     Train net output #1: accuracy = 0.719061
+I0512 10:01:19.199244 31642 solver.cpp:245]     Train net output #2: accuracy = 0.692643
+I0512 10:01:19.199247 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.958492
+I0512 10:01:19.199251 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.677822
+I0512 10:01:19.199255 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.652843
+I0512 10:01:19.199261 31642 sgd_solver.cpp:106] Iteration 1290, lr = 5e-06
+I0512 10:08:33.422044 31642 solver.cpp:229] Iteration 1300, loss = 0.0743823
+I0512 10:08:33.422351 31642 solver.cpp:245]     Train net output #0: accuracy = 0.959608
+I0512 10:08:33.422363 31642 solver.cpp:245]     Train net output #1: accuracy = 0.668668
+I0512 10:08:33.422368 31642 solver.cpp:245]     Train net output #2: accuracy = 0.629962
+I0512 10:08:33.422371 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.959078
+I0512 10:08:33.422374 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.662518
+I0512 10:08:33.422379 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.624534
+I0512 10:08:33.422385 31642 sgd_solver.cpp:106] Iteration 1300, lr = 5e-06
+I0512 10:15:43.619768 31642 solver.cpp:229] Iteration 1310, loss = 0.0751686
+I0512 10:15:43.620056 31642 solver.cpp:245]     Train net output #0: accuracy = 0.879351
+I0512 10:15:43.620074 31642 solver.cpp:245]     Train net output #1: accuracy = 0.803199
+I0512 10:15:43.620079 31642 solver.cpp:245]     Train net output #2: accuracy = 0.673857
+I0512 10:15:43.620087 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.891042
+I0512 10:15:43.620093 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.78854
+I0512 10:15:43.620100 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.683633
+I0512 10:15:43.620107 31642 sgd_solver.cpp:106] Iteration 1310, lr = 5e-06
+I0512 10:22:53.975406 31642 solver.cpp:229] Iteration 1320, loss = 0.110238
+I0512 10:22:53.975646 31642 solver.cpp:245]     Train net output #0: accuracy = 0.99381
+I0512 10:22:53.975658 31642 solver.cpp:245]     Train net output #1: accuracy = 0.840893
+I0512 10:22:53.975687 31642 solver.cpp:245]     Train net output #2: accuracy = 0.828446
+I0512 10:22:53.975704 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.990704
+I0512 10:22:53.975709 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.748383
+I0512 10:22:53.975714 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.739579
+I0512 10:22:53.975733 31642 sgd_solver.cpp:106] Iteration 1320, lr = 5e-06
+I0512 10:30:04.873714 31642 solver.cpp:229] Iteration 1330, loss = 0.0866678
+I0512 10:30:04.874020 31642 solver.cpp:245]     Train net output #0: accuracy = 0.861772
+I0512 10:30:04.874032 31642 solver.cpp:245]     Train net output #1: accuracy = 0.805289
+I0512 10:30:04.874037 31642 solver.cpp:245]     Train net output #2: accuracy = 0.700705
+I0512 10:30:04.874040 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.847565
+I0512 10:30:04.874044 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.760534
+I0512 10:30:04.874048 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.661156
+I0512 10:30:04.874054 31642 sgd_solver.cpp:106] Iteration 1330, lr = 5e-06
+I0512 10:37:14.925648 31642 solver.cpp:229] Iteration 1340, loss = 0.0674089
+I0512 10:37:14.925977 31642 solver.cpp:245]     Train net output #0: accuracy = 0.997039
+I0512 10:37:14.925987 31642 solver.cpp:245]     Train net output #1: accuracy = 0.707719
+I0512 10:37:14.925992 31642 solver.cpp:245]     Train net output #2: accuracy = 0.646097
+I0512 10:37:14.925997 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.997193
+I0512 10:37:14.925999 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.666254
+I0512 10:37:14.926003 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.629143
+I0512 10:37:14.926009 31642 sgd_solver.cpp:106] Iteration 1340, lr = 5e-06
+I0512 10:44:24.905387 31642 solver.cpp:229] Iteration 1350, loss = 0.0865401
+I0512 10:44:24.905670 31642 solver.cpp:245]     Train net output #0: accuracy = 1
+I0512 10:44:24.905699 31642 solver.cpp:245]     Train net output #1: accuracy = 1
+I0512 10:44:24.905704 31642 solver.cpp:245]     Train net output #2: accuracy = 1
+I0512 10:44:24.905707 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 1
+I0512 10:44:24.905711 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 1
+I0512 10:44:24.905714 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 1
+I0512 10:44:24.905755 31642 sgd_solver.cpp:106] Iteration 1350, lr = 5e-06
+I0512 10:51:34.874461 31642 solver.cpp:229] Iteration 1360, loss = 0.0861865
+I0512 10:51:34.874680 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993839
+I0512 10:51:34.874688 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 10:51:34.874693 31642 solver.cpp:245]     Train net output #2: accuracy = 0.49692
+I0512 10:51:34.874697 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993839
+I0512 10:51:34.874701 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 10:51:34.874704 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.49692
+I0512 10:51:34.874712 31642 sgd_solver.cpp:106] Iteration 1360, lr = 5e-06
+I0512 10:58:46.914687 31642 solver.cpp:229] Iteration 1370, loss = 0.104109
+I0512 10:58:46.922606 31642 solver.cpp:245]     Train net output #0: accuracy = 0.926057
+I0512 10:58:46.922646 31642 solver.cpp:245]     Train net output #1: accuracy = 0.842293
+I0512 10:58:46.922705 31642 solver.cpp:245]     Train net output #2: accuracy = 0.769041
+I0512 10:58:46.922724 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.921533
+I0512 10:58:46.922767 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.825101
+I0512 10:58:46.922780 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.753493
+I0512 10:58:46.922827 31642 sgd_solver.cpp:106] Iteration 1370, lr = 5e-06
+I0512 11:06:00.955130 31642 solver.cpp:229] Iteration 1380, loss = 0.0602322
+I0512 11:06:00.955334 31642 solver.cpp:245]     Train net output #0: accuracy = 0.982421
+I0512 11:06:00.955343 31642 solver.cpp:245]     Train net output #1: accuracy = 0.776648
+I0512 11:06:00.955348 31642 solver.cpp:245]     Train net output #2: accuracy = 0.742976
+I0512 11:06:00.955353 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.98256
+I0512 11:06:00.955355 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.773429
+I0512 11:06:00.955359 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.742502
+I0512 11:06:00.955368 31642 sgd_solver.cpp:106] Iteration 1380, lr = 5e-06
+I0512 11:13:11.985306 31642 solver.cpp:229] Iteration 1390, loss = 0.074378
+I0512 11:13:11.985534 31642 solver.cpp:245]     Train net output #0: accuracy = 0.986176
+I0512 11:13:11.985545 31642 solver.cpp:245]     Train net output #1: accuracy = 0.5
+I0512 11:13:11.985550 31642 solver.cpp:245]     Train net output #2: accuracy = 0.493088
+I0512 11:13:11.985569 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.986176
+I0512 11:13:11.985574 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.5
+I0512 11:13:11.985577 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.493088
+I0512 11:13:11.985599 31642 sgd_solver.cpp:106] Iteration 1390, lr = 5e-06
+I0512 11:20:22.278012 31642 solver.cpp:229] Iteration 1400, loss = 0.0559854
+I0512 11:20:22.278223 31642 solver.cpp:245]     Train net output #0: accuracy = 0.999658
+I0512 11:20:22.278234 31642 solver.cpp:245]     Train net output #1: accuracy = 0.999658
+I0512 11:20:22.278239 31642 solver.cpp:245]     Train net output #2: accuracy = 0.499829
+I0512 11:20:22.278242 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.998814
+I0512 11:20:22.278245 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.998814
+I0512 11:20:22.278249 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.499407
+I0512 11:20:22.278256 31642 sgd_solver.cpp:106] Iteration 1400, lr = 5e-06
+I0512 11:27:32.228086 31642 solver.cpp:229] Iteration 1410, loss = 0.0637329
+I0512 11:27:32.228446 31642 solver.cpp:245]     Train net output #0: accuracy = 0.977961
+I0512 11:27:32.228482 31642 solver.cpp:245]     Train net output #1: accuracy = 0.535633
+I0512 11:27:32.228487 31642 solver.cpp:245]     Train net output #2: accuracy = 0.524408
+I0512 11:27:32.228490 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.977966
+I0512 11:27:32.228528 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.542012
+I0512 11:27:32.228549 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.530361
+I0512 11:27:32.228597 31642 sgd_solver.cpp:106] Iteration 1410, lr = 5e-06
+I0512 11:34:42.748862 31642 solver.cpp:229] Iteration 1420, loss = 0.122266
+I0512 11:34:42.749122 31642 solver.cpp:245]     Train net output #0: accuracy = 0.938815
+I0512 11:34:42.749133 31642 solver.cpp:245]     Train net output #1: accuracy = 0.634381
+I0512 11:34:42.749138 31642 solver.cpp:245]     Train net output #2: accuracy = 0.585963
+I0512 11:34:42.749142 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.937252
+I0512 11:34:42.749159 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.637002
+I0512 11:34:42.749163 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.585212
+I0512 11:34:42.749184 31642 sgd_solver.cpp:106] Iteration 1420, lr = 5e-06
+I0512 11:41:52.653967 31642 solver.cpp:229] Iteration 1430, loss = 0.0528655
+I0512 11:41:52.661255 31642 solver.cpp:245]     Train net output #0: accuracy = 0.984598
+I0512 11:41:52.661295 31642 solver.cpp:245]     Train net output #1: accuracy = 0.66542
+I0512 11:41:52.661347 31642 solver.cpp:245]     Train net output #2: accuracy = 0.590484
+I0512 11:41:52.661360 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.984821
+I0512 11:41:52.661370 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.65935
+I0512 11:41:52.661573 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.588796
+I0512 11:41:52.661610 31642 sgd_solver.cpp:106] Iteration 1430, lr = 5e-06
+I0512 11:49:02.052376 31642 solver.cpp:229] Iteration 1440, loss = 0.0786211
+I0512 11:49:02.052698 31642 solver.cpp:245]     Train net output #0: accuracy = 0.923914
+I0512 11:49:02.052711 31642 solver.cpp:245]     Train net output #1: accuracy = 0.723209
+I0512 11:49:02.052714 31642 solver.cpp:245]     Train net output #2: accuracy = 0.661061
+I0512 11:49:02.052719 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.921513
+I0512 11:49:02.052722 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.709954
+I0512 11:49:02.052726 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.649072
+I0512 11:49:02.052732 31642 sgd_solver.cpp:106] Iteration 1440, lr = 5e-06
+I0512 11:56:11.425940 31642 solver.cpp:229] Iteration 1450, loss = 0.092055
+I0512 11:56:11.426234 31642 solver.cpp:245]     Train net output #0: accuracy = 0.98184
+I0512 11:56:11.426247 31642 solver.cpp:245]     Train net output #1: accuracy = 0.793915
+I0512 11:56:11.426252 31642 solver.cpp:245]     Train net output #2: accuracy = 0.706378
+I0512 11:56:11.426257 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.981652
+I0512 11:56:11.426260 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.751184
+I0512 11:56:11.426265 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.685921
+I0512 11:56:11.426271 31642 sgd_solver.cpp:106] Iteration 1450, lr = 5e-06
+I0512 12:03:21.535912 31642 solver.cpp:229] Iteration 1460, loss = 0.100621
+I0512 12:03:21.536113 31642 solver.cpp:245]     Train net output #0: accuracy = 0.972465
+I0512 12:03:21.536123 31642 solver.cpp:245]     Train net output #1: accuracy = 0.714778
+I0512 12:03:21.536128 31642 solver.cpp:245]     Train net output #2: accuracy = 0.651886
+I0512 12:03:21.536131 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.971419
+I0512 12:03:21.536134 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.667626
+I0512 12:03:21.536139 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.621517
+I0512 12:03:21.536145 31642 sgd_solver.cpp:106] Iteration 1460, lr = 5e-06
+I0512 12:10:35.087520 31642 solver.cpp:229] Iteration 1470, loss = 0.11813
+I0512 12:10:35.087837 31642 solver.cpp:245]     Train net output #0: accuracy = 0.981062
+I0512 12:10:35.087847 31642 solver.cpp:245]     Train net output #1: accuracy = 0.827963
+I0512 12:10:35.087852 31642 solver.cpp:245]     Train net output #2: accuracy = 0.784201
+I0512 12:10:35.087888 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.978993
+I0512 12:10:35.087920 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.81683
+I0512 12:10:35.087944 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.766507
+I0512 12:10:35.087977 31642 sgd_solver.cpp:106] Iteration 1470, lr = 5e-06
+I0512 12:17:45.144505 31642 solver.cpp:229] Iteration 1480, loss = 0.0708311
+I0512 12:17:45.144804 31642 solver.cpp:245]     Train net output #0: accuracy = 0.998542
+I0512 12:17:45.144815 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499896
+I0512 12:17:45.144820 31642 solver.cpp:245]     Train net output #2: accuracy = 0.499271
+I0512 12:17:45.144837 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.998745
+I0512 12:17:45.144855 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499998
+I0512 12:17:45.144871 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.499373
+I0512 12:17:45.144879 31642 sgd_solver.cpp:106] Iteration 1480, lr = 5e-06
+I0512 12:24:55.391897 31642 solver.cpp:229] Iteration 1490, loss = 0.0728592
+I0512 12:24:55.398672 31642 solver.cpp:245]     Train net output #0: accuracy = 0.977054
+I0512 12:24:55.398702 31642 solver.cpp:245]     Train net output #1: accuracy = 0.855403
+I0512 12:24:55.398710 31642 solver.cpp:245]     Train net output #2: accuracy = 0.804178
+I0512 12:24:55.398716 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.975481
+I0512 12:24:55.398727 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.841334
+I0512 12:24:55.398735 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.790873
+I0512 12:24:55.398746 31642 sgd_solver.cpp:106] Iteration 1490, lr = 5e-06
+I0512 12:32:05.560837 31642 solver.cpp:229] Iteration 1500, loss = 0.0732098
+I0512 12:32:05.561046 31642 solver.cpp:245]     Train net output #0: accuracy = 0.953532
+I0512 12:32:05.561055 31642 solver.cpp:245]     Train net output #1: accuracy = 0.70419
+I0512 12:32:05.561060 31642 solver.cpp:245]     Train net output #2: accuracy = 0.65889
+I0512 12:32:05.561064 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.953874
+I0512 12:32:05.561069 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.705492
+I0512 12:32:05.561071 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.660586
+I0512 12:32:05.561079 31642 sgd_solver.cpp:106] Iteration 1500, lr = 5e-06
+I0512 12:39:16.267783 31642 solver.cpp:229] Iteration 1510, loss = 0.0719613
+I0512 12:39:16.268055 31642 solver.cpp:245]     Train net output #0: accuracy = 0.972004
+I0512 12:39:16.268066 31642 solver.cpp:245]     Train net output #1: accuracy = 0.73944
+I0512 12:39:16.268071 31642 solver.cpp:245]     Train net output #2: accuracy = 0.638973
+I0512 12:39:16.268075 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.971161
+I0512 12:39:16.268079 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.733012
+I0512 12:39:16.268082 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.632784
+I0512 12:39:16.268090 31642 sgd_solver.cpp:106] Iteration 1510, lr = 5e-06
+I0512 12:46:26.087080 31642 solver.cpp:229] Iteration 1520, loss = 0.0729977
+I0512 12:46:26.087270 31642 solver.cpp:245]     Train net output #0: accuracy = 0.98194
+I0512 12:46:26.087278 31642 solver.cpp:245]     Train net output #1: accuracy = 0.639284
+I0512 12:46:26.087283 31642 solver.cpp:245]     Train net output #2: accuracy = 0.617861
+I0512 12:46:26.087287 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.981186
+I0512 12:46:26.087291 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.648099
+I0512 12:46:26.087294 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.619758
+I0512 12:46:26.087301 31642 sgd_solver.cpp:106] Iteration 1520, lr = 5e-06
+I0512 12:53:38.679760 31642 solver.cpp:229] Iteration 1530, loss = 0.0672594
+I0512 12:53:38.679986 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993492
+I0512 12:53:38.679996 31642 solver.cpp:245]     Train net output #1: accuracy = 0.59669
+I0512 12:53:38.679999 31642 solver.cpp:245]     Train net output #2: accuracy = 0.581814
+I0512 12:53:38.680003 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993204
+I0512 12:53:38.680007 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.613408
+I0512 12:53:38.680011 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.59031
+I0512 12:53:38.680017 31642 sgd_solver.cpp:106] Iteration 1530, lr = 5e-06
+I0512 13:00:48.577497 31642 solver.cpp:229] Iteration 1540, loss = 0.135796
+I0512 13:00:48.577692 31642 solver.cpp:245]     Train net output #0: accuracy = 0.959732
+I0512 13:00:48.577702 31642 solver.cpp:245]     Train net output #1: accuracy = 0.811863
+I0512 13:00:48.577706 31642 solver.cpp:245]     Train net output #2: accuracy = 0.763753
+I0512 13:00:48.577710 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.954906
+I0512 13:00:48.577713 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.770873
+I0512 13:00:48.577718 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.729589
+I0512 13:00:48.577724 31642 sgd_solver.cpp:106] Iteration 1540, lr = 5e-06
+I0512 13:08:02.549547 31642 solver.cpp:229] Iteration 1550, loss = 0.0875036
+I0512 13:08:02.556210 31642 solver.cpp:245]     Train net output #0: accuracy = 0.969207
+I0512 13:08:02.556255 31642 solver.cpp:245]     Train net output #1: accuracy = 0.669875
+I0512 13:08:02.556264 31642 solver.cpp:245]     Train net output #2: accuracy = 0.643168
+I0512 13:08:02.556270 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.965581
+I0512 13:08:02.556275 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.628037
+I0512 13:08:02.556282 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.602382
+I0512 13:08:02.556313 31642 sgd_solver.cpp:106] Iteration 1550, lr = 5e-06
+I0512 13:15:12.356142 31642 solver.cpp:229] Iteration 1560, loss = 0.0920616
+I0512 13:15:12.356359 31642 solver.cpp:245]     Train net output #0: accuracy = 0.988795
+I0512 13:15:12.356369 31642 solver.cpp:245]     Train net output #1: accuracy = 0.621661
+I0512 13:15:12.356372 31642 solver.cpp:245]     Train net output #2: accuracy = 0.611497
+I0512 13:15:12.356376 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.988239
+I0512 13:15:12.356380 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.609375
+I0512 13:15:12.356384 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.59801
+I0512 13:15:12.356390 31642 sgd_solver.cpp:106] Iteration 1560, lr = 5e-06
+I0512 13:22:21.943099 31642 solver.cpp:229] Iteration 1570, loss = 0.0577848
+I0512 13:22:21.943426 31642 solver.cpp:245]     Train net output #0: accuracy = 0.983234
+I0512 13:22:21.943445 31642 solver.cpp:245]     Train net output #1: accuracy = 0.848882
+I0512 13:22:21.943454 31642 solver.cpp:245]     Train net output #2: accuracy = 0.777338
+I0512 13:22:21.943461 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.983482
+I0512 13:22:21.943467 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.833668
+I0512 13:22:21.943475 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.773657
+I0512 13:22:21.943496 31642 sgd_solver.cpp:106] Iteration 1570, lr = 5e-06
+I0512 13:29:31.346851 31642 solver.cpp:229] Iteration 1580, loss = 0.0883835
+I0512 13:29:31.347084 31642 solver.cpp:245]     Train net output #0: accuracy = 0.959008
+I0512 13:29:31.347095 31642 solver.cpp:245]     Train net output #1: accuracy = 0.597249
+I0512 13:29:31.347100 31642 solver.cpp:245]     Train net output #2: accuracy = 0.551574
+I0512 13:29:31.347105 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.959921
+I0512 13:29:31.347107 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.560576
+I0512 13:29:31.347111 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.529181
+I0512 13:29:31.347118 31642 sgd_solver.cpp:106] Iteration 1580, lr = 5e-06
+I0512 13:36:40.395489 31642 solver.cpp:229] Iteration 1590, loss = 0.031973
+I0512 13:36:40.395743 31642 solver.cpp:245]     Train net output #0: accuracy = 0.993279
+I0512 13:36:40.395753 31642 solver.cpp:245]     Train net output #1: accuracy = 0.521191
+I0512 13:36:40.395757 31642 solver.cpp:245]     Train net output #2: accuracy = 0.517162
+I0512 13:36:40.395761 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.993348
+I0512 13:36:40.395766 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.522322
+I0512 13:36:40.395768 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.518428
+I0512 13:36:40.395776 31642 sgd_solver.cpp:106] Iteration 1590, lr = 5e-06
+I0512 13:43:52.438221 31642 solver.cpp:229] Iteration 1600, loss = 0.0662372
+I0512 13:43:52.438491 31642 solver.cpp:245]     Train net output #0: accuracy = 0.982401
+I0512 13:43:52.438503 31642 solver.cpp:245]     Train net output #1: accuracy = 0.499796
+I0512 13:43:52.438508 31642 solver.cpp:245]     Train net output #2: accuracy = 0.4912
+I0512 13:43:52.438511 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.982024
+I0512 13:43:52.438515 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499604
+I0512 13:43:52.438519 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.491012
+I0512 13:43:52.438525 31642 sgd_solver.cpp:106] Iteration 1600, lr = 5e-06
+I0512 13:51:02.027657 31642 solver.cpp:229] Iteration 1610, loss = 0.0446578
+I0512 13:51:02.034569 31642 solver.cpp:245]     Train net output #0: accuracy = 0.985531
+I0512 13:51:02.034631 31642 solver.cpp:245]     Train net output #1: accuracy = 0.690275
+I0512 13:51:02.034643 31642 solver.cpp:245]     Train net output #2: accuracy = 0.658195
+I0512 13:51:02.034657 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.986086
+I0512 13:51:02.034694 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.706464
+I0512 13:51:02.034703 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.672051
+I0512 13:51:02.034744 31642 sgd_solver.cpp:106] Iteration 1610, lr = 5e-06
+I0512 13:58:12.080029 31642 solver.cpp:229] Iteration 1620, loss = 0.118182
+I0512 13:58:12.080390 31642 solver.cpp:245]     Train net output #0: accuracy = 0.987842
+I0512 13:58:12.080482 31642 solver.cpp:245]     Train net output #1: accuracy = 0.837268
+I0512 13:58:12.080502 31642 solver.cpp:245]     Train net output #2: accuracy = 0.774044
+I0512 13:58:12.080507 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.987188
+I0512 13:58:12.080510 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.829925
+I0512 13:58:12.080514 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.764587
+I0512 13:58:12.080523 31642 sgd_solver.cpp:106] Iteration 1620, lr = 5e-06
+I0512 14:05:21.725139 31642 solver.cpp:229] Iteration 1630, loss = 0.0642188
+I0512 14:05:21.725369 31642 solver.cpp:245]     Train net output #0: accuracy = 0.994489
+I0512 14:05:21.725380 31642 solver.cpp:245]     Train net output #1: accuracy = 0.49925
+I0512 14:05:21.725385 31642 solver.cpp:245]     Train net output #2: accuracy = 0.497245
+I0512 14:05:21.725389 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.995099
+I0512 14:05:21.725392 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.499557
+I0512 14:05:21.725396 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.49755
+I0512 14:05:21.725417 31642 sgd_solver.cpp:106] Iteration 1630, lr = 5e-06
+I0512 14:12:35.858521 31642 solver.cpp:229] Iteration 1640, loss = 0.0905999
+I0512 14:12:35.858783 31642 solver.cpp:245]     Train net output #0: accuracy = 0.971191
+I0512 14:12:35.858791 31642 solver.cpp:245]     Train net output #1: accuracy = 0.552715
+I0512 14:12:35.858796 31642 solver.cpp:245]     Train net output #2: accuracy = 0.523288
+I0512 14:12:35.858799 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.968204
+I0512 14:12:35.858803 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.575779
+I0512 14:12:35.858808 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.531876
+I0512 14:12:35.858814 31642 sgd_solver.cpp:106] Iteration 1640, lr = 5e-06
+I0512 14:19:45.676630 31642 solver.cpp:229] Iteration 1650, loss = 0.0708956
+I0512 14:19:45.676965 31642 solver.cpp:245]     Train net output #0: accuracy = 0.963393
+I0512 14:19:45.676976 31642 solver.cpp:245]     Train net output #1: accuracy = 0.740977
+I0512 14:19:45.676980 31642 solver.cpp:245]     Train net output #2: accuracy = 0.705617
+I0512 14:19:45.676985 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.960075
+I0512 14:19:45.677007 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.718061
+I0512 14:19:45.677011 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.681459
+I0512 14:19:45.677018 31642 sgd_solver.cpp:106] Iteration 1650, lr = 5e-06
+I0512 14:26:55.513908 31642 solver.cpp:229] Iteration 1660, loss = 0.0672038
+I0512 14:26:55.514199 31642 solver.cpp:245]     Train net output #0: accuracy = 0.958254
+I0512 14:26:55.514210 31642 solver.cpp:245]     Train net output #1: accuracy = 0.626643
+I0512 14:26:55.514230 31642 solver.cpp:245]     Train net output #2: accuracy = 0.603354
+I0512 14:26:55.514247 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.953289
+I0512 14:26:55.514252 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.576352
+I0512 14:26:55.514268 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.552221
+I0512 14:26:55.514277 31642 sgd_solver.cpp:106] Iteration 1660, lr = 5e-06
+I0512 14:34:04.818755 31642 solver.cpp:229] Iteration 1670, loss = 0.0495401
+I0512 14:34:04.825740 31642 solver.cpp:245]     Train net output #0: accuracy = 0.985739
+I0512 14:34:04.825776 31642 solver.cpp:245]     Train net output #1: accuracy = 0.934167
+I0512 14:34:04.825788 31642 solver.cpp:245]     Train net output #2: accuracy = 0.764644
+I0512 14:34:04.825824 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.986161
+I0512 14:34:04.825865 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.932241
+I0512 14:34:04.825873 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.767961
+I0512 14:34:04.825955 31642 sgd_solver.cpp:106] Iteration 1670, lr = 5e-06
+I0512 14:41:14.115726 31642 solver.cpp:229] Iteration 1680, loss = 0.0917486
+I0512 14:41:14.115968 31642 solver.cpp:245]     Train net output #0: accuracy = 0.984896
+I0512 14:41:14.115978 31642 solver.cpp:245]     Train net output #1: accuracy = 0.698373
+I0512 14:41:14.115983 31642 solver.cpp:245]     Train net output #2: accuracy = 0.676182
+I0512 14:41:14.116006 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.983909
+I0512 14:41:14.116010 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.678165
+I0512 14:41:14.116014 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.65642
+I0512 14:41:14.116020 31642 sgd_solver.cpp:106] Iteration 1680, lr = 5e-06
+I0512 14:48:24.308792 31642 solver.cpp:229] Iteration 1690, loss = 0.0767924
+I0512 14:48:24.309003 31642 solver.cpp:245]     Train net output #0: accuracy = 0.998442
+I0512 14:48:24.309012 31642 solver.cpp:245]     Train net output #1: accuracy = 0.651111
+I0512 14:48:24.309016 31642 solver.cpp:245]     Train net output #2: accuracy = 0.650332
+I0512 14:48:24.309021 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.998269
+I0512 14:48:24.309025 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.612222
+I0512 14:48:24.309028 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.611356
+I0512 14:48:24.309034 31642 sgd_solver.cpp:106] Iteration 1690, lr = 5e-06
+I0512 14:55:33.112047 31642 solver.cpp:229] Iteration 1700, loss = 0.0610354
+I0512 14:55:33.112251 31642 solver.cpp:245]     Train net output #0: accuracy = 0.987356
+I0512 14:55:33.112260 31642 solver.cpp:245]     Train net output #1: accuracy = 0.503097
+I0512 14:55:33.112264 31642 solver.cpp:245]     Train net output #2: accuracy = 0.496797
+I0512 14:55:33.112268 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.987341
+I0512 14:55:33.112272 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.508126
+I0512 14:55:33.112275 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.501765
+I0512 14:55:33.112282 31642 sgd_solver.cpp:106] Iteration 1700, lr = 5e-06
+I0512 15:02:44.017998 31642 solver.cpp:229] Iteration 1710, loss = 0.099405
+I0512 15:02:44.018322 31642 solver.cpp:245]     Train net output #0: accuracy = 0.969177
+I0512 15:02:44.018333 31642 solver.cpp:245]     Train net output #1: accuracy = 0.719693
+I0512 15:02:44.018337 31642 solver.cpp:245]     Train net output #2: accuracy = 0.68221
+I0512 15:02:44.018362 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.968448
+I0512 15:02:44.018366 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.716238
+I0512 15:02:44.018369 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.67732
+I0512 15:02:44.018375 31642 sgd_solver.cpp:106] Iteration 1710, lr = 5e-06
+I0512 15:09:57.069880 31642 solver.cpp:229] Iteration 1720, loss = 0.0523602
+I0512 15:09:57.070091 31642 solver.cpp:245]     Train net output #0: accuracy = 0.969559
+I0512 15:09:57.070102 31642 solver.cpp:245]     Train net output #1: accuracy = 0.529047
+I0512 15:09:57.070107 31642 solver.cpp:245]     Train net output #2: accuracy = 0.513616
+I0512 15:09:57.070111 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.969197
+I0512 15:09:57.070114 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.532326
+I0512 15:09:57.070118 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.516381
+I0512 15:09:57.070125 31642 sgd_solver.cpp:106] Iteration 1720, lr = 5e-06
+I0512 15:17:08.324304 31642 solver.cpp:229] Iteration 1730, loss = 0.0538638
+I0512 15:17:08.325206 31642 solver.cpp:245]     Train net output #0: accuracy = 0.964053
+I0512 15:17:08.325228 31642 solver.cpp:245]     Train net output #1: accuracy = 0.603501
+I0512 15:17:08.325248 31642 solver.cpp:245]     Train net output #2: accuracy = 0.574834
+I0512 15:17:08.325266 31642 solver.cpp:245]     Train net output #3: accuracy_2 = 0.963591
+I0512 15:17:08.325271 31642 solver.cpp:245]     Train net output #4: accuracy_2 = 0.586969
+I0512 15:17:08.325275 31642 solver.cpp:245]     Train net output #5: accuracy_2 = 0.561328
+...

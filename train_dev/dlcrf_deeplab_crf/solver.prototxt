@@ -1,0 +1,19 @@
+train_net: "train.prototxt"
+
+iter_size: 1
+
+solver_type: SGD
+base_lr: 5e-6
+lr_policy: "step"
+gamma: 0.7
+stepsize: 15000
+momentum: 0.96
+weight_decay: 0.0005
+
+average_loss: 10
+display: 10
+max_iter: 300000
+
+snapshot: 10000
+snapshot_prefix: "snapshots/dl2crf"
+solver_mode: CPU
