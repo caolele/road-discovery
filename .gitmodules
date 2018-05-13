@@ -1,3 +1,6 @@
 [submodule "caffe"]
 	path = caffe
 	url = https://github.com/caolele/caffe.git
+[submodule "model_compression/CaffeModelCompression"]
+	path = model_compression/CaffeModelCompression
+	url = https://github.com/caolele/CaffeModelCompression.git
