@@ -9,3 +9,5 @@ nohup caffe train -solver solver.prototxt -weights ./pretrained.caffemodel > log
 ```
 nohup caffe train -solver solver.prototxt -weights ./pretrained.caffemodel > log_gneti.txt &
 ```
+
+./dlcrfRF /dvol/road-discovery/deploy_test/road_finder_dlcrf/test/img3.jpg ../test/img3_road
