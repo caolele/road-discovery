@@ -4,7 +4,7 @@ Caffe Model Compression
 
 This is an adapted python tool used to compress the trained caffe weights.
 For Deeplab2 + CRF, it manages to reduce the model size from 145MB to about 13MB.
-For GoogleNet inception model, it reduce from 2.4MB to about 3.7MB
+For GoogleNet inception model, it reduce from 24MB to about 3.7MB
 The idea comes from [Deep Compression](http://arxiv.org/pdf/1510.00149v5.pdf) . 
 This work does not implement purning and Huffman coding, but implement the Kmeans 
 quantization to compress the weights of convolution and full-connected layer.
