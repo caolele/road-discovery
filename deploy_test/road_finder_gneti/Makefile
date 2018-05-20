@@ -33,12 +33,12 @@ else
 endif
 
 
-LIB_BOOST := -L /dvol/packages/boost_1_63_0/build/lib -lboost_thread -lboost_system
-LIB_OPENCV := -L /dvol/packages/opencv-2.4.13/build/lib -lopencv_imgproc -lopencv_core -lopencv_highgui
+LIB_BOOST := -L /usr/lib/x86_64-linux-gnu -lboost_thread -lboost_system
+LIB_OPENCV := -L /usr/lib/x86_64-linux-gnu -lopencv_imgproc -lopencv_core -lopencv_highgui
 #LIB_CAFFE := -L /opt/caffe/build/lib -Wl,--whole-archive -lcaffe -Wl,--no-whole-archive
 LIB_CAFFE := -L /opt/caffe/build/lib -lcaffe
-LIB_GLOG := -L /dvol/packages/glog-0.3.4/build/lib -lglog
-LIB_CURL := -L /dvol/packages/curl-7.59.0/build/lib -lcurl
+LIB_GLOG := -L /usr/lib/x86_64-linux-gnu -lglog
+LIB_CURL := -L ~/curl-7.59.0/build/lib -lcurl
 LIB_PROTOBUF := -L /dvol/packages/protobuf-2.6.0/build/lib -lprotobuf
 LIB_Z := -L /dvol/packages/zlib-1.2.10/build/lib -lz
 LIB_JASPER := -L /dvol/packages/opencv-2.4.13/build/3rdparty/lib -llibjasper
@@ -81,7 +81,7 @@ $(TARGET): $(OBJECTS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)
-	$(CC) $(CFLAGS) $(INC) $(INC_CURL) $(INC_OPENCV) $(INC_CAFFE) $(INC_BOOST) $(INC_GFLAGS) $(INC_GLOG) $(INC_PROTOBUF) $(INC_BLAS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INC) $(INC_CURL) $(INC_CAFFE) -c -o $@ $<
 
 clean:
 	@echo " Cleaning...";
