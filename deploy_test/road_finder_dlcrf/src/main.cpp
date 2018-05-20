@@ -31,8 +31,6 @@ int main(int argc, const char * argv[]) {
     // probability precision
     cout.precision(NUM_PRECISION);
     
-    /* dummy is used to ensure that ODPS does not
-     * schedule two many tasks for one node */
     string src_img, dst_img;
     vector<double> probs;
     
@@ -70,14 +68,15 @@ int main(int argc, const char * argv[]) {
                     cout << "Error when writting detection results to " << ss.str() << endl;
                 }
             }
-            
+
+            delete _am;
+            delete _dlc;
+            delete _rf;
 
         } else {
-            cout << "Usage: ..." << endl;
+            cout << "Usage: dlcrfRF input_file.jpg output_file_prefix" << endl;
         }
             
-        
-        
     }catch(char const* errMsg){
         cout << "Fatal Error: " << errMsg << endl;
     }

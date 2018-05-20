@@ -11,3 +11,4 @@ nohup caffe train -solver solver.prototxt -weights ./pretrained.caffemodel > log
 ```
 
 ./dlcrfRF /dvol/road-discovery/deploy_test/road_finder_dlcrf/test/img3.jpg ../test/img3_road
+./gnetiRF ../../test_resource/img3.jpg

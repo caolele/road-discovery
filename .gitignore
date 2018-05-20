@@ -104,3 +104,8 @@ venv.bak/
 .mypy_cache/
 
 .DS_Store
+
+# google model specific
+predmap_ext.jpg
+predmap.jpg
+probimg.jpg
