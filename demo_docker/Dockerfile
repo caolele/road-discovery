@@ -29,6 +29,6 @@ RUN cd ~ && \
     make all -j4 && \
     cd /workspace && \
     mkdir mount && \
-    export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH
+    echo 'export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 
 # WORKDIR ~/road-discovery
