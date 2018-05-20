@@ -98,7 +98,7 @@ The DeepLab prediction has 2 modes: fast (non-overlap prediction) and slow (over
 ```
 cd /workspace/road-discovery/deploy_test/road_finder_dlcrf/bin
 
-./dlcrfRF /dvol/road-discovery/deploy_test/road_finder_dlcrf/test/img1.jpg ../test/img1_road
+./dlcrfRF ../../test_resource/img1.jpg ../test/img1_road
 ```
 
 The GoogleNet model is generally slower because it merely predicts the central 16x16 small area for each input patch (224x224). To try out:

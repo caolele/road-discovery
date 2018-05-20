@@ -50,12 +50,12 @@ LIB_HDF := -L /dvol/packages/hdf5-1.8.18/build/lib -lhdf5_hl -lhdf5
 LIB_BLAS := -L /dvol/packages/openblas-0.2.19/build/lib -lopenblas 
 LIB_IDN := -L /dvol/packages/libidn-1.3/build/lib -lidn
 LIB_DL := -L /usr/lib64 -ldl
-LIB_GFLAGS := -L /dvol/packages/gflags-2.1.2/build/lib -lgflags
+LIB_GFLAGS := -L /usr/lib/x86_64-linux-gnu -lgflags
 LIB_LMDB := -L /dvol/packages/lmdb-0.9.19/libraries/liblmdb -llmdb
 LIB_LEVELDB := -L /dvol/packages/leveldb-1.19/out-static -lleveldb
 
 INC := -I include
-INC_CURL := -I /dvol/packages/curl-7.59.0/build/include
+INC_CURL := -I ~/curl-7.59.0/build/include
 INC_OPENCV := -I /dvol/packages/opencv-2.4.13/include
 INC_CAFFE := -I /opt/caffe/include -I /opt/caffe/build/include
 INC_BOOST := -I /dvol/packages/boost_1_63_0/build/include

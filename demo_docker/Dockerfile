@@ -25,6 +25,7 @@ RUN cd ~ && \
     cp -rf /workspace/road-discovery/caffe/* . && \  
     apt-get install -y libmatio-dev && \
     cd /opt/caffe/build && \
+    cmake .. && \
     make all -j4 && \
     cd /workspace && \
     mkdir mount
