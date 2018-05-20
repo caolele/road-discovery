@@ -31,4 +31,4 @@ else
 fi
 
 echo "Entering demo ..."
-docker run -it --name rd-demo -v $(pwd)/mount:/dvol road-discovery:latest
+docker run -it --name rd-demo -v $(pwd)/mount:/workspace/mount road-discovery:latest

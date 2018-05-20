@@ -24,10 +24,10 @@ cd quantz_kit
 #### How to use it:
 Compression example:
 ```
-python caffemodel_compressor.py compress ../deploy_test/road_finder_dlcrf/deploy_finder_cpu.prototxt ../train_dev/dlcrf_deeplab_crf/snapshots/dl2crf_iter_xxxxx.caffemodelz")
+python caffemodel_compressor.py compress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ../train_dev/dlcrf_deeplab_crf/snapshots/dl2crf_iter_xxxxx.caffemodel
 ```
 
 De-compression example:
 ```
-python caffemodel_compressor.py decompress ../deploy_test/road_finder_dlcrf/deploy_finder_cpu.prototxt ./dl2crf_iter_xxxxx.npz")
+python caffemodel_compressor.py decompress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ./dl2crf_iter_xxxxx.npz
 ```

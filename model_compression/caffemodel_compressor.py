@@ -4,7 +4,7 @@ import numpy as np
 from math import ceil
 #from quantz_kit.weights_quantization import weights_quantization
 import sys
-sys.path.append("./CaffeModelCompression/quantz_kit")
+sys.path.append("./CaffeModelCompression")
 import weights_quantization as wqtz
 import time
 
