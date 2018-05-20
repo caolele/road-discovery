@@ -79,7 +79,7 @@ Compression of DeepLab+CRF model:
 python caffemodel_compressor.py compress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ../train_dev/dlcrf_deeplab_crf/snapshots/dl2crf_iter_xxxxx.caffemodel
 
 # GoogleNet model
-python caffemodel_compressor.py compress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ../train_dev/gneti_googlenet_inception/snapshots/gneti_iter_xxxxx.caffemodel
+python caffemodel_compressor.py compress ../deploy_test/road_finder_gneti/bin/deploy_finder_cpu.prototxt ../train_dev/gneti_googlenet_inception/snapshots/goneti_iter_xxxxx.caffemodel
 ```
 
 De-compression examples:
@@ -88,12 +88,42 @@ De-compression examples:
 python caffemodel_compressor.py decompress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ./dl2crf_iter_xxxxx.npz
 
 # GoogleNet model
-
+python caffemodel_compressor.py decompress ../deploy_test/road_finder_gneti/bin/deploy_finder_cpu.prototxt ./goneti_iter_xxxxx.npz
 ```
 
+### Test Deployed Models
+If you want to change the prediction program, you may rebuild the binary with ```make -j4``` in the corresponding folders (i.e. deploy_test/road_finder_dlcrf/ and deploy_test/road_finder_gneti/).  
 
-./dlcrfRF /dvol/road-discovery/deploy_test/road_finder_dlcrf/test/img3.jpg ../test/img3_road
-./gnetiRF ../../test_resource/img3.jpg
+The DeepLab prediction has 2 modes: fast (non-overlap prediction) and slow (overlapped prediction); the input patch has size of 449x449. To try out:
+```
+cd /workspace/road-discovery/deploy_test/road_finder_dlcrf/bin
 
-docker build -t road-discovery .
+./dlcrfRF /dvol/road-discovery/deploy_test/road_finder_dlcrf/test/img1.jpg ../test/img1_road
+```
 
+The GoogleNet model is generally slower because it merely predicts the central 16x16 small area for each input patch (224x224). To try out:
+```
+cd /workspace/road-discovery/deploy_test/road_finder_gneti/bin
+
+./gnetiRF ../../test_resource/img2.jpg
+```
+Feel free to try out your own images by copying them to the mounted folder "road-discovery/demo_docker/mount/"
+
+## A Few Examples
+### DeepLab+CRF:
+upper-left: input image; upper-right: prediction overlay; bottom-left: label; bottom-right: prediction  
+![alt text](./demo_docker/mount/dlcrf1.jpg)
+
+upper-left: input image; upper-right: prediction overlay; bottom-left: label; bottom-right: prediction  
+![alt text](./demo_docker/mount/dlcrf2.jpg)
+
+### GoogleNet:
+upper: prediction image; bottom: input raw image  
+![alt text](./demo_docker/mount/gneti1.jpg)
+
+upper: prediction image; bottom: input raw image  
+![alt text](./demo_docker/mount/gneti2.jpg)
+
+
+## Stay Tuned for Road-Vectorization and Change-Detection 
+:see_no_evil: :hear_no_evil:  :speak_no_evil:
