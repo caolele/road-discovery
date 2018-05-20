@@ -28,6 +28,7 @@ RUN cd ~ && \
     cmake .. && \
     make all -j4 && \
     cd /workspace && \
-    mkdir mount
+    mkdir mount && \
+    export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH
 
 # WORKDIR ~/road-discovery
