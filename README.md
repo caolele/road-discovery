@@ -1,5 +1,7 @@
 # Road-Discovery: Tooling & Models for Fine-Grained Road Detection from Aerial/Satellite Images
 
+**STATEMENT:** This is ONLY and nothing more than a TOY EXAMPLE for understanding the basic possible approach of detecting objects from aerial images. The models included in this repository is under-trained with some public datasets, hence is not suitable for practical use cases. In case of using any source code and/or model, please add reference of this repository to your work.
+
 This repo contains two complete examples of aerial detection using [DeepLab+CRF](https://arxiv.org/abs/1606.00915) and [GoogleNet](https://arxiv.org/abs/1409.4842) models respectively.
 
 This toolbox contains functions of
@@ -123,7 +125,7 @@ python plot_loss_from_log_dlcrf.py ./log_example_gneti.txt
 
 
 ### Compression and De-compression of Models
-**In docker container**, navigate to folder /workspace/road-discovery/model_compression/ and you do the following:
+**In docker container**, navigate to folder /workspace/road-discovery/model_compression/, and you can do the following things:
 
 Compression of DeepLab+CRF model:
 ```
