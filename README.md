@@ -48,6 +48,7 @@ Feel free to try out your own images by copying them to the mounted folder "road
 
 
 ## Demonstration: A Few Examples
+You might get slightly worse predictions than the examples illustrated below, which is due to the [model compression operation](#compression-and-de-compression-of-models) carried out on the original models.
 ### DeepLab+CRF:
 upper-left: input image; upper-right: prediction overlay; bottom-left: label; bottom-right: prediction  
 ![alt text](./demo_docker/mount/dlcrf1.jpg)
@@ -64,7 +65,7 @@ upper: prediction image; bottom: input raw image
 
 ------
 
-## [OPTIONAL for DEMO] - Train/Finetune Your Own Models
+## [OPTIONAL for DEMO] - Retrain/Finetune Your Own Models
 ### Download Raw Data
 The dstl raw data+label has to be downloaded to data/raw folder following detailed instructions 
 [here](https://www.kaggle.com/c/dstl-satellite-imagery-feature-detection/data). 
