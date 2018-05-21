@@ -70,6 +70,18 @@ cd /workspace/road-discovery/train_dev/gneti_googlenet_inception/
 nohup caffe train -solver solver.prototxt -weights ./pretrained.caffemodel > log_gneti.txt &
 ```
 
+You can visualize and analyse the training performance by doing:
+```
+cd /workspace/road-discovery/src/visualize_training_log
+
+# visualize training log of DeepLab+CRF
+python plot_loss_from_log_dlcrf.py ./log_example_dlcrf.txt
+
+# visualize training log of GoogleNet
+python plot_loss_from_log_dlcrf.py ./log_example_gneti.txt
+``` 
+
+
 ### Compression and De-compression of Models
 **In docker container**, navigate to folder /workspace/road-discovery/model_compression/ and you do the following:
 
@@ -98,10 +110,10 @@ The DeepLab prediction has 2 modes: fast (non-overlap prediction) and slow (over
 ```
 cd /workspace/road-discovery/deploy_test/road_finder_dlcrf/bin
 
-./dlcrfRF ../../test_resource/img1.jpg ../test/img1_road
+./dlcrfRF ../../test_resource/img1.jpg /workspace/mount/dlcrf_img1_out
 ```
 
-The GoogleNet model is generally slower because it merely predicts the central 16x16 small area for each input patch (224x224). To try out:
+The GoogleNet model is generally slower because it merely predicts the central 16x16 small area for each input patch (224x224). To try out (the output file is in the same folder by default):
 ```
 cd /workspace/road-discovery/deploy_test/road_finder_gneti/bin
 

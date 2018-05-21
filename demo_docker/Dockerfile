@@ -29,6 +29,12 @@ RUN cd ~ && \
     make all -j4 && \
     cd /workspace && \
     mkdir mount && \
-    echo 'export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+    echo 'export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH' >> ~/.bashrc && \
+    export LD_LIBRARY_PATH=/opt/caffe/build/lib:$LD_LIBRARY_PATH && \
+    cd /workspace/road-discovery/model_compression && \
+    python caffemodel_compressor.py decompress ../deploy_test/road_finder_dlcrf/bin/deploy_finder_cpu.prototxt ./dl2crf_iter_xxxxx.npz && \
+    mv ./dl2crf_iter_xxxxx.caffemodel ../train_dev/dlcrf_deeplab_crf/snapshots/ &&\
+    python caffemodel_compressor.py decompress ../deploy_test/road_finder_gneti/bin/deploy_finder_cpu.prototxt ./goneti_iter_xxxxx.npz && \
+    mv ./goneti_iter_xxxxx.caffemodel ../train_dev/gneti_googlenet_inception/snapshots/
 
 # WORKDIR ~/road-discovery
